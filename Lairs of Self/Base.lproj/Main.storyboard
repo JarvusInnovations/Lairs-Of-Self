@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T1e-1F-XmW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -56,7 +56,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="T1e-1F-XmW" kind="presentation" id="73S-b2-TXy"/>
+                                    <segue destination="T1e-1F-XmW" kind="custom" customClass="NoPushAnimationSegue" id="73S-b2-TXy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,7 +82,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="00LOSMaskOverlays_BlackMask" translatesAutoresizingMaskIntoConstraints="NO" id="WAq-m9-Drg">
                                 <rect key="frame" x="115" y="186" width="544" height="651"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MqL-rd-orV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MqL-rd-orV" customClass="NoPus">
                                 <rect key="frame" x="115" y="186" width="544" height="651"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvl-7n-Z6b">
@@ -114,11 +114,42 @@
                         <outlet property="maskImage" destination="WAq-m9-Drg" id="2VH-CP-VIC"/>
                         <outlet property="proceedButton" destination="mdb-f9-5NB" id="FWm-pe-13n"/>
                         <outlet property="retakeButton" destination="Uvl-7n-Z6b" id="mpq-jr-W3N"/>
+                        <segue destination="T1e-1F-XmW" kind="presentation" identifier="selectMask" id="Lhp-dR-pwC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-hT-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="110"/>
+            <point key="canvasLocation" x="1025" y="136"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SNZ-G2-Zcq">
+            <objects>
+                <viewController id="kPV-Vb-GE1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pYC-7C-7Dz"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Eh-c6-7y2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6ne-k1-Jzn">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="l7J-iH-gUe">
+                                <rect key="frame" x="234" y="196" width="300" height="300"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You may enter the installation." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4b-t2-QsY">
+                                <rect key="frame" x="159" y="504" width="451" height="101"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaV-nx-Trx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="1340"/>
         </scene>
         <!--Mask Selection View Controller-->
         <scene sceneID="79b-At-alT">
@@ -158,11 +189,12 @@
                     <connections>
                         <outlet property="carousel" destination="oL3-k3-kew" id="oOd-Rq-I3f"/>
                         <outlet property="proceedButton" destination="DU6-Sy-2mY" id="yTO-cS-NCe"/>
+                        <segue destination="kPV-Vb-GE1" kind="show" identifier="enterInstallation" id="WVw-Ta-YNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="1148"/>
+            <point key="canvasLocation" x="1989" y="136"/>
         </scene>
     </scenes>
     <resources>
@@ -170,6 +202,10 @@
         <image name="LOSButtonLeft" width="274" height="189"/>
         <image name="LOSButtonLeftWhite" width="274" height="189"/>
         <image name="LOSButtonRightWhite" width="274" height="189"/>
+        <image name="logo" width="644" height="588"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="73S-b2-TXy"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "APIRequest.h"
+#import "NoPushAnimationSegue.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //APIRequest *request = [[APIRequest alloc] init];
+    //[request makeAPIRequest];
 }
 
 - (void)didReceiveMemoryWarning {

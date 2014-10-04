@@ -61,6 +61,8 @@
     
     NSInteger index = [_carousel currentItemIndex]; //_carousel.currentItemIndex;
     NSLog(@"Selected image with index: %i",index);
+    [self performSegueWithIdentifier:@"enterInstallation" sender:self];
+    
 }
 
 // Carousel Config

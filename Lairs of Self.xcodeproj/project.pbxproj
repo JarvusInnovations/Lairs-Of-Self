@@ -18,6 +18,8 @@
 		2F6FF8C719DECA2E000EA569 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8C619DECA2E000EA569 /* iCarousel.m */; };
 		2F6FF8CC19DECB23000EA569 /* MaskSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8CB19DECB23000EA569 /* MaskSelectionViewController.m */; };
 		2F6FF8CF19DEFF3A000EA569 /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */; };
+		2FA3A9E419E09A6C00D0515C /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA3A9E319E09A6C00D0515C /* APIRequest.m */; };
+		2FA3A9E719E0A43800D0515C /* NoPushAnimationSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA3A9E619E0A43800D0515C /* NoPushAnimationSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		2F6FF8CB19DECB23000EA569 /* MaskSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskSelectionViewController.m; sourceTree = "<group>"; };
 		2F6FF8CD19DEFF3A000EA569 /* CameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayView.h; sourceTree = "<group>"; };
 		2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayView.m; sourceTree = "<group>"; };
+		2FA3A9E219E09A6C00D0515C /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
+		2FA3A9E319E09A6C00D0515C /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		2FA3A9E519E0A43800D0515C /* NoPushAnimationSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPushAnimationSegue.h; sourceTree = "<group>"; };
+		2FA3A9E619E0A43800D0515C /* NoPushAnimationSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPushAnimationSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,9 @@
 			children = (
 				2F6FF8C919DECA48000EA569 /* ViewControllers */,
 				2F6FF8D019DEFF44000EA569 /* Views */,
-				2F6FF8C819DECA39000EA569 /* iCarousel */,
+				2F6FF8C819DECA39000EA569 /* Classes */,
 				2F6FF8A619DEC112000EA569 /* Main.storyboard */,
+				2FA3A9E819E0A43C00D0515C /* Segues */,
 				2F6FF8A919DEC112000EA569 /* Images.xcassets */,
 				2F6FF8AB19DEC112000EA569 /* LaunchScreen.xib */,
 				2F6FF89C19DEC112000EA569 /* Supporting Files */,
@@ -132,13 +139,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2F6FF8C819DECA39000EA569 /* iCarousel */ = {
+		2F6FF8C819DECA39000EA569 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2FA3A9E219E09A6C00D0515C /* APIRequest.h */,
+				2FA3A9E319E09A6C00D0515C /* APIRequest.m */,
 				2F6FF8C519DECA2E000EA569 /* iCarousel.h */,
 				2F6FF8C619DECA2E000EA569 /* iCarousel.m */,
 			);
-			name = iCarousel;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		2F6FF8C919DECA48000EA569 /* ViewControllers */ = {
@@ -161,6 +170,15 @@
 				2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		2FA3A9E819E0A43C00D0515C /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				2FA3A9E519E0A43800D0515C /* NoPushAnimationSegue.h */,
+				2FA3A9E619E0A43800D0515C /* NoPushAnimationSegue.m */,
+			);
+			name = Segues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA3A9E719E0A43800D0515C /* NoPushAnimationSegue.m in Sources */,
 				2F6FF8A519DEC112000EA569 /* ViewController.m in Sources */,
 				2F6FF8CF19DEFF3A000EA569 /* CameraOverlayView.m in Sources */,
+				2FA3A9E419E09A6C00D0515C /* APIRequest.m in Sources */,
 				2F6FF8C719DECA2E000EA569 /* iCarousel.m in Sources */,
 				2F6FF8C419DEC376000EA569 /* CameraViewController.m in Sources */,
 				2F6FF8CC19DECB23000EA569 /* MaskSelectionViewController.m in Sources */,
@@ -467,6 +487,7 @@
 				2F6FF8BE19DEC112000EA569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F6FF8BF19DEC112000EA569 /* Build configuration list for PBXNativeTarget "Lairs of SelfTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +496,7 @@
 				2F6FF8C119DEC112000EA569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

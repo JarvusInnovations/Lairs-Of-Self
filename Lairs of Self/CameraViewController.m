@@ -73,6 +73,7 @@
 - (IBAction)proceedWithPicture:(id)sender {
     
     NSLog(@"procdeed with picture");
+    [self performSegueWithIdentifier:@"selectMask" sender:self];
 
 }
 
