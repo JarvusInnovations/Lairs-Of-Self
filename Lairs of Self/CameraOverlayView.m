@@ -26,15 +26,27 @@
 
         NSLog(@"Width %f Height: %f", self.frame.size.width, self.frame.size.height);
         
+        // Top Space Filler
+        CGRect topFillerRect = CGRectMake(0, 0, self.frame.size.width, 110);
+        UIView *fillerTop = [[UIView alloc] initWithFrame:topFillerRect];
+        fillerTop.backgroundColor = [UIColor blackColor];
+        [self addSubview:fillerTop];
+        
+        // Bottom Space Filler
+        CGRect bottomFillerRect = CGRectMake(0, 875, self.frame.size.width, 200);
+        UIView *fillerBottom = [[UIView alloc] initWithFrame:bottomFillerRect];
+        fillerBottom.backgroundColor = [UIColor blackColor];
+        [self addSubview:fillerBottom];
+ 
         // Background Panel
         UIImage *background = [UIImage imageNamed:@"00LOSMaskOverlays_BlackMask800.png"];
         UIImageView *backgroundView = [[UIImageView alloc] initWithImage:background];
-        backgroundView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        backgroundView.contentMode = UIViewContentModeCenter;
+        backgroundView.contentMode = UIViewContentModeScaleToFill;
+        backgroundView.frame = CGRectMake(0, 100, self.frame.size.width, 800);
         [self addSubview:backgroundView];
         
         // Top Label
-        UILabel *placeEyes = [[UILabel alloc] initWithFrame:CGRectMake(50, 40, self.frame.size.width , 100)];
+        UILabel *placeEyes = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width , 100)];
         placeEyes.attributedText = [[NSAttributedString alloc] initWithString:@"Place Your Eyes"];
         placeEyes.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:35.0f];
         placeEyes.textColor = [UIColor whiteColor];
@@ -45,6 +57,7 @@
         UIImage *leftEye = [UIImage imageNamed:@"test1.png"];
         UIImageView *leftEyeView = [[UIImageView alloc] initWithImage:leftEye];
         leftEyeView.frame = CGRectMake(50, 200, 200, 200);
+        leftEyeView.alpha = .5;
         leftEyeView.contentMode = UIViewContentModeCenter;
         [self addSubview:leftEyeView];
         
@@ -52,6 +65,7 @@
         UIImage *rightEye = [UIImage imageNamed:@"test1.png"];
         UIImageView *rightEyeView = [[UIImageView alloc] initWithImage:rightEye];
         rightEyeView.frame = CGRectMake(400, 200, 200, 200);
+        rightEyeView.alpha = .4;
         rightEyeView.contentMode = UIViewContentModeCenter;
         [self addSubview:rightEyeView];
         
@@ -70,12 +84,13 @@
     if (_captureImageButton == nil) {
         UIImage *captureButtonImage = [UIImage imageNamed:@"LOSButtonRightWhite.png"];
         _captureImageButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _captureImageButton.frame = CGRectMake(300, 700, 274, 189);
+        _captureImageButton.frame = CGRectMake(self.frame.size.width/2-62.5, 854, 125, 86);
         [_captureImageButton setBackgroundImage:captureButtonImage forState:UIControlStateNormal];
         [_captureImageButton setTitle:@"Capture" forState:UIControlStateNormal];
         [_captureImageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _captureImageButton.titleLabel.numberOfLines = 1;
         _captureImageButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+
         _captureImageButton.titleLabel.lineBreakMode = NSLineBreakByClipping;
         [_captureImageButton sizeThatFits:CGSizeMake(274, 189)];
         [_captureImageButton addTarget:self action:@selector(captureImage:) forControlEvents:UIControlEventTouchUpInside];

@@ -43,11 +43,14 @@
         _picker.delegate = self;
         _picker.allowsEditing = YES;
         _picker.cameraOverlayView = _overlay;
-        [self presentViewController:_picker animated:YES completion:NULL];
+        [self presentViewController:_picker animated:NO completion:NULL];
         
     } else {
+        [self.view bringSubviewToFront:_retakeButton];
+        [self.view bringSubviewToFront:_proceedButton];
         _retakeButton.hidden = false;
         _proceedButton.hidden = false;
+        _maskImage.hidden = false;
         //[self dismissViewControllerAnimated:YES completion:nil];
     }
 
@@ -56,18 +59,17 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     _userImage = [info valueForKey:UIImagePickerControllerOriginalImage];
     self.cameraView.image = _userImage;
-    [_picker dismissViewControllerAnimated:YES completion:NULL];
+    [_picker dismissViewControllerAnimated:NO completion:NULL];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)retakePicture:(id)sender {
-    NSLog(@"retake picture");
     _userImage = nil;
     self.cameraView.image = nil;
-    [self presentViewController:_picker animated:YES completion:NULL];
+    [self presentViewController:_picker animated:NO completion:NULL];
 }
 
 - (IBAction)proceedWithPicture:(id)sender {
