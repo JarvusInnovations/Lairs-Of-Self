@@ -45,6 +45,7 @@
         backgroundView.frame = CGRectMake(0, 100, self.frame.size.width, 800);
         [self addSubview:backgroundView];
         
+        
         // Top Label
         UILabel *placeEyes = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, self.frame.size.width , 100)];
         placeEyes.attributedText = [[NSAttributedString alloc] initWithString:@"Place Your Eyes"];
@@ -53,21 +54,48 @@
         placeEyes.textAlignment = NSTextAlignmentCenter;
         [self addSubview:placeEyes];
         
-        // Left eye overlay
-        UIImage *leftEye = [UIImage imageNamed:@"test1.png"];
-        UIImageView *leftEyeView = [[UIImageView alloc] initWithImage:leftEye];
-        leftEyeView.frame = CGRectMake(50, 200, 200, 200);
-        leftEyeView.alpha = .5;
-        leftEyeView.contentMode = UIViewContentModeCenter;
-        [self addSubview:leftEyeView];
-        
-        // Right eye overlay
-        UIImage *rightEye = [UIImage imageNamed:@"test1.png"];
-        UIImageView *rightEyeView = [[UIImageView alloc] initWithImage:rightEye];
-        rightEyeView.frame = CGRectMake(400, 200, 200, 200);
-        rightEyeView.alpha = .4;
-        rightEyeView.contentMode = UIViewContentModeCenter;
-        [self addSubview:rightEyeView];
+        // Get display type from settings
+        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        NSString * display_type = [standardUserDefaults objectForKey:@"display_type"];
+
+        // Diplay type 1
+        if ([display_type isEqualToString:@"1"]) {
+            NSLog(@"Display Type 1");
+            // Left eye overlay
+            UIImage *leftEye = [UIImage imageNamed:@"test1.png"];
+            UIImageView *leftEyeView = [[UIImageView alloc] initWithImage:leftEye];
+            leftEyeView.frame = CGRectMake(50, 200, 200, 200);
+            leftEyeView.alpha = .5;
+            leftEyeView.contentMode = UIViewContentModeCenter;
+            [self addSubview:leftEyeView];
+            
+            // Right eye overlay
+            UIImage *rightEye = [UIImage imageNamed:@"test1.png"];
+            UIImageView *rightEyeView = [[UIImageView alloc] initWithImage:rightEye];
+            rightEyeView.frame = CGRectMake(400, 200, 200, 200);
+            rightEyeView.alpha = .4;
+            rightEyeView.contentMode = UIViewContentModeCenter;
+            [self addSubview:rightEyeView];
+            
+        // Display type 2
+        } else {
+            NSLog(@"Display Type 2");
+            // Left eye overlay
+            UIImage *leftEye = [UIImage imageNamed:@"test1.png"];
+            UIImageView *leftEyeView = [[UIImageView alloc] initWithImage:leftEye];
+            leftEyeView.frame = CGRectMake(50, 400, 200, 200);
+            leftEyeView.alpha = .5;
+            leftEyeView.contentMode = UIViewContentModeCenter;
+            [self addSubview:leftEyeView];
+            
+            // Right eye overlay
+            UIImage *rightEye = [UIImage imageNamed:@"test1.png"];
+            UIImageView *rightEyeView = [[UIImageView alloc] initWithImage:rightEye];
+            rightEyeView.frame = CGRectMake(400, 400, 200, 200);
+            rightEyeView.alpha = .4;
+            rightEyeView.contentMode = UIViewContentModeCenter;
+            [self addSubview:rightEyeView];
+        }
         
         [self createCaptureImageButton];
         [self addSubview:_captureImageButton];

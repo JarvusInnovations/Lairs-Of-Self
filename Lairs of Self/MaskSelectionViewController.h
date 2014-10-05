@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
+#import "APIRequest.h"
 
 @interface MaskSelectionViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 

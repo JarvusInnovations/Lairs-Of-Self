@@ -45,7 +45,7 @@
     [self updateButtonEnablement:NO];
     
     _closeButton.hidden = false;
-    _termsContent.hidden = false;    
+    _termsContent.hidden = false;
 }
 
 - (IBAction)closeTerms:(id)sender {

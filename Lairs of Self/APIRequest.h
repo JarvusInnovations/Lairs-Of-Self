@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MaskSelectionViewController.h"
 
 @interface APIRequest : NSObject
 
 @property (nonatomic, strong) NSURL *requestUrl;
 
 -(void)makeAPIRequest;
+-(void)makeAPIRequestWithMask:(NSInteger)index andUserImage:(UIImage *)image;
 
 @end

@@ -59,8 +59,16 @@
 
 - (IBAction)proceedButtonClicked:(id)sender {
     
-    NSInteger index = [_carousel currentItemIndex]; //_carousel.currentItemIndex;
+    NSInteger index = [_carousel currentItemIndex];
+    NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"userImage"];
+    UIImage* image = [UIImage imageWithData:imageData];
+    
+    APIRequest *request = [[APIRequest alloc] init];
+    [request makeAPIRequestWithMask:index andUserImage:image];
+    
     NSLog(@"Selected image with index: %i",index);
+    NSLog(@"Selected image with index: %@",image);
+    
     [self performSegueWithIdentifier:@"enterInstallation" sender:self];
     
 }

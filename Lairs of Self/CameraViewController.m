@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic)UIImagePickerController *picker;
 @property (strong, nonatomic)CameraOverlayView *overlay;
+
 @end
 
 @implementation CameraViewController
@@ -73,10 +74,9 @@
 }
 
 - (IBAction)proceedWithPicture:(id)sender {
-    
     NSLog(@"procdeed with picture");
+    [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(_userImage) forKey:@"userImage"];
     [self performSegueWithIdentifier:@"selectMask" sender:self];
-
 }
 
 #pragma - mark Notifications
