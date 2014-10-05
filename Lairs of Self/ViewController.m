@@ -25,8 +25,14 @@
     _backButton.hidden = true;
     _ImSureButton.hidden = true;
     
-    //APIRequest *request = [[APIRequest alloc] init];
-    //[request makeAPIRequest];
+//    APIRequest *request = [[APIRequest alloc] init];
+//    [request makeAPIRequest];
+    
+//    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+//    NSString * display_type = [standardUserDefaults objectForKey:@"display_type"];
+//    NSString * server_address = [standardUserDefaults objectForKey:@"server_address"];
+//    NSLog(@"Host Address: %@", server_address);
+//    NSLog(@"Display Type: %@", display_type);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,16 +42,17 @@
 - (IBAction)termsOfUse:(id)sender {
     
     [self updateAssetAlphas:.2];
+    [self updateButtonEnablement:NO];
     
     _closeButton.hidden = false;
-    _termsContent.hidden = false;
-    
+    _termsContent.hidden = false;    
 }
 
 - (IBAction)closeTerms:(id)sender {
     
     [self updateAssetAlphas:1];
-
+    [self updateButtonEnablement:YES];
+    
     _closeButton.hidden = true;
     _termsContent.hidden = true;
     
@@ -85,6 +92,14 @@
     _backButton.alpha = value;
     _ImSureButton.alpha = value;
     _omitContent.alpha = value;
+}
+
+- (void)updateButtonEnablement:(BOOL)value {
+    _omitButton.userInteractionEnabled = value;
+    _proceedButton.userInteractionEnabled = value;
+    _termsOfUseButton.userInteractionEnabled = value;
+    _backButton.userInteractionEnabled = value;
+    _ImSureButton.userInteractionEnabled = value;
 }
 
 @end

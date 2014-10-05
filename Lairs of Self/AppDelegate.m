@@ -16,7 +16,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Make sure settings are initialized
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * display_type = [standardUserDefaults objectForKey:@"display_type"];
+    NSString * server_address = [standardUserDefaults objectForKey:@"server_address"];
+    
+    if (!display_type) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"0"] forKey:@"display_type"];
+    }
+
+    if (!server_address) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"http://tylers-mac.local:8080"] forKey:@"server_address"];
+    }
+    
     return YES;
 }
 
