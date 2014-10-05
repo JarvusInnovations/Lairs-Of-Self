@@ -272,13 +272,20 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Sy-2mY">
                                 <rect key="frame" x="309" y="765" width="150" height="103"/>
-                                <state key="normal" title="Proceed" backgroundImage="LOSButtonLeft">
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRight">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="proceedButtonClicked:" destination="T1e-1F-XmW" eventType="touchUpInside" id="k7r-3B-445"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackTriangleUp" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-bq-LXH">
+                                <rect key="frame" x="222" y="911" width="325" height="113"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackTriangleDown" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-KS-dB7">
+                                <rect key="frame" x="222" y="0.0" width="325" height="113"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -295,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2201" y="636"/>
+            <point key="canvasLocation" x="2086" y="636"/>
         </scene>
     </scenes>
     <resources>
@@ -305,10 +312,12 @@
         <image name="LOSButtonRight" width="274" height="189"/>
         <image name="LOSButtonRightWhite" width="274" height="189"/>
         <image name="blackFiller" width="1257" height="300"/>
+        <image name="blackTriangleDown" width="470" height="164"/>
+        <image name="blackTriangleUp" width="470" height="164"/>
         <image name="logo" width="644" height="588"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aFS-Le-m2s"/>
+        <segue reference="WVw-Ta-YNz"/>
         <segue reference="Lhp-dR-pwC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
