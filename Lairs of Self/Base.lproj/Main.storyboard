@@ -17,55 +17,145 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gain Full Access to the instalation." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-Ld-HEh">
-                                <rect key="frame" x="168" y="126" width="265" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First see &amp; be seen." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5K5-jQ-p3h">
-                                <rect key="frame" x="168" y="155" width="151" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-2P-SI1">
-                                <rect key="frame" x="182" y="260" width="47" height="60"/>
-                                <state key="normal" title="Omit">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-2P-SI1">
+                                <rect key="frame" x="213" y="878" width="125" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Omit" backgroundImage="LOSButtonLeft">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="omitInstallation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSd-tT-32H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkV-pY-tQc">
+                                <rect key="frame" x="213" y="878" width="125" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Back" backgroundImage="LOSButtonLeft">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToFront:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZK-u9-U9G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-ov-Tpd">
+                                <rect key="frame" x="322" y="751" width="125" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Close" backgroundImage="LOSButtonLeft">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeTerms:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OJe-tg-9dP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-bA-pFl">
-                                <rect key="frame" x="248" y="-8" width="90" height="60"/>
+                                <rect key="frame" x="339" y="20" width="90" height="30"/>
                                 <state key="normal" title="Terms of Use">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="termsOfUse:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTU-MT-0lC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP6-BT-aa8">
-                                <rect key="frame" x="365" y="260" width="58" height="60"/>
-                                <state key="normal" title="Proceed">
+                                <rect key="frame" x="430" y="878" width="125" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRight">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="zSn-So-pd3" kind="presentation" id="XFV-Nf-Hvd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isX-Zk-drU">
-                                <rect key="frame" x="248" y="341" width="90" height="60"/>
-                                <state key="normal" title="Mask Gallery">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-10-i6E">
+                                <rect key="frame" x="430" y="878" width="125" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="I'm Sure" backgroundImage="LOSButtonRight">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="T1e-1F-XmW" kind="custom" customClass="NoPushAnimationSegue" id="73S-b2-TXy"/>
+                                    <action selector="enterInsallation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7fk-KS-KrQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isX-Zk-drU">
+                                <rect key="frame" x="27" y="964" width="163" height="60"/>
+                                <state key="normal" title="Directly to Mask Gallery">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T1e-1F-XmW" kind="show" id="73S-b2-TXy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnk-Ja-EFg">
+                                <rect key="frame" x="121" y="106" width="527" height="88"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Terms of Use">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-5O-x53">
+                                <rect key="frame" x="234" y="225" width="300" height="274"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-Ld-HEh">
+                                <rect key="frame" x="124" y="513" width="521" height="147"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Gain Full Access to the installation. ">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="First see &amp; be seen.">
+                                        <attributes>
+                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJG-25-kcS">
+                                <rect key="frame" x="129" y="513" width="500" height="192"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="You will not be able to interact with the installation. Are you sure you want to omit?">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="ImSureButton" destination="ctR-10-i6E" id="mXu-Ou-QY4"/>
+                        <outlet property="backButton" destination="HkV-pY-tQc" id="4OU-aV-cRf"/>
+                        <outlet property="closeButton" destination="MGa-ov-Tpd" id="uqt-ls-4Yk"/>
+                        <outlet property="contentLabel1" destination="PNS-Ld-HEh" id="E5v-22-TMe"/>
+                        <outlet property="logo" destination="Yyq-5O-x53" id="cxB-zu-t10"/>
+                        <outlet property="omitButton" destination="LeD-2P-SI1" id="EZ1-ud-Wyo"/>
+                        <outlet property="omitContent" destination="aJG-25-kcS" id="kZV-vT-TXu"/>
+                        <outlet property="proceedButton" destination="mP6-BT-aa8" id="5lT-vn-gHa"/>
+                        <outlet property="termsContent" destination="Xnk-Ja-EFg" id="kNt-Q8-gCE"/>
+                        <outlet property="termsOfUseButton" destination="SMz-bA-pFl" id="zHk-Gu-pBq"/>
+                        <segue destination="kPV-Vb-GE1" kind="show" identifier="enterInstallation" id="aFS-Le-m2s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-325" y="184"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="ptq-eE-kQ2">
@@ -121,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="1025" y="136"/>
         </scene>
-        <!--View Controller-->
+        <!--Enter Installation View Controller-->
         <scene sceneID="SNZ-G2-Zcq">
             <objects>
-                <viewController id="kPV-Vb-GE1" sceneMemberID="viewController">
+                <viewController id="kPV-Vb-GE1" customClass="EnterInstallationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pYC-7C-7Dz"/>
                         <viewControllerLayoutGuide type="bottom" id="2Eh-c6-7y2"/>
@@ -146,6 +236,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="restart" id="1hB-ry-2Xg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaV-nx-Trx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -194,17 +287,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="136"/>
+            <point key="canvasLocation" x="2201" y="636"/>
         </scene>
     </scenes>
     <resources>
         <image name="00LOSMaskOverlays_BlackMask" width="1536" height="1670"/>
         <image name="LOSButtonLeft" width="274" height="189"/>
         <image name="LOSButtonLeftWhite" width="274" height="189"/>
+        <image name="LOSButtonRight" width="274" height="189"/>
         <image name="LOSButtonRightWhite" width="274" height="189"/>
         <image name="logo" width="644" height="588"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aFS-Le-m2s"/>
         <segue reference="73S-b2-TXy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

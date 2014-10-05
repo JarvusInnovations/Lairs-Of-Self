@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F6551B219E16D8A007FE76C /* EnterInstallationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */; };
 		2F6FF89F19DEC112000EA569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF89E19DEC112000EA569 /* main.m */; };
 		2F6FF8A219DEC112000EA569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8A119DEC112000EA569 /* AppDelegate.m */; };
 		2F6FF8A519DEC112000EA569 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8A419DEC112000EA569 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F6551B019E16D8A007FE76C /* EnterInstallationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterInstallationViewController.h; sourceTree = "<group>"; };
+		2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterInstallationViewController.m; sourceTree = "<group>"; };
 		2F6FF89919DEC112000EA569 /* Lairs of Self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lairs of Self.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6FF89D19DEC112000EA569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6FF89E19DEC112000EA569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				2F6FF8C319DEC376000EA569 /* CameraViewController.m */,
 				2F6FF8CA19DECB23000EA569 /* MaskSelectionViewController.h */,
 				2F6FF8CB19DECB23000EA569 /* MaskSelectionViewController.m */,
+				2F6551B019E16D8A007FE76C /* EnterInstallationViewController.h */,
+				2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				2F6FF8C719DECA2E000EA569 /* iCarousel.m in Sources */,
 				2F6FF8C419DEC376000EA569 /* CameraViewController.m in Sources */,
 				2F6FF8CC19DECB23000EA569 /* MaskSelectionViewController.m in Sources */,
+				2F6551B219E16D8A007FE76C /* EnterInstallationViewController.m in Sources */,
 				2F6FF8A219DEC112000EA569 /* AppDelegate.m in Sources */,
 				2F6FF89F19DEC112000EA569 /* main.m in Sources */,
 			);

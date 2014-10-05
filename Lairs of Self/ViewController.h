@@ -10,6 +10,22 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *logo;
+@property (strong, nonatomic) IBOutlet UIButton *closeButton;
+@property (strong, nonatomic) IBOutlet UILabel *termsContent;
+@property (strong, nonatomic) IBOutlet UILabel *contentLabel1;
+@property (strong, nonatomic) IBOutlet UIButton *termsOfUseButton;
+@property (strong, nonatomic) IBOutlet UIButton *omitButton;
+@property (strong, nonatomic) IBOutlet UIButton *proceedButton;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UIButton *ImSureButton;
+@property (strong, nonatomic) IBOutlet UILabel *omitContent;
+
+- (IBAction)termsOfUse:(id)sender;
+- (IBAction)closeTerms:(id)sender;
+- (IBAction)backToFront:(id)sender;
+- (IBAction)enterInsallation:(id)sender;
+- (IBAction)omitInstallation:(id)sender;
 
 @end
 
