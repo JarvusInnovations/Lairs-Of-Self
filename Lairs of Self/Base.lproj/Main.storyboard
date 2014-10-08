@@ -173,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="883" width="801" height="141"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvl-7n-Z6b">
-                                <rect key="frame" x="183" y="854" width="155" height="86"/>
+                                <rect key="frame" x="213" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Retake" backgroundImage="LOSButtonLeftWhite">
                                     <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
@@ -184,7 +184,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-f9-5NB">
-                                <rect key="frame" x="457" y="854" width="155" height="86"/>
+                                <rect key="frame" x="430" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Proceed" backgroundImage="LOSButtonRightWhite">
                                     <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
@@ -347,8 +347,8 @@
         <image name="triangle-up" width="708" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l17-E0-ZPd"/>
-        <segue reference="1hB-ry-2Xg"/>
+        <segue reference="aFS-Le-m2s"/>
+        <segue reference="6uM-KI-Xon"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

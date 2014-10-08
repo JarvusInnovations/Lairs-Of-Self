@@ -113,20 +113,6 @@
             [self addSubview:eyeOverlay2];
         }
         
-        UIImage *captureImage = [UIImage imageNamed:@"eyes-capture-btn_360.png"];
-        _capture = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _capture.frame = CGRectMake(430, 878, 125, 86);
-        [_capture setBackgroundImage:captureImage forState:UIControlStateNormal];
-        //[_capture setTitle:@"Capture" forState:UIControlStateNormal];
-        [_capture setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _capture.titleLabel.numberOfLines = 1;
-        _capture.titleLabel.adjustsFontSizeToFitWidth = YES;
-        _capture.titleLabel.lineBreakMode = NSLineBreakByClipping;
-        [_capture sizeThatFits:CGSizeMake(274, 189)];
-        [_capture addTarget:self action:@selector(captureImage:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_capture];
-
-        
         UIImage *backImage = [UIImage imageNamed:@"eyes-back-btn_360.png"];
         _back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _back.frame = CGRectMake(213, 878, 125, 86);
@@ -139,6 +125,19 @@
         [_back sizeThatFits:CGSizeMake(274, 189)];
         [_back addTarget:self action:@selector(backToHome:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_back];
+        
+        UIImage *captureImage = [UIImage imageNamed:@"eyes-capture-btn_360.png"];
+        _capture = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        _capture.frame = CGRectMake(430, 878, 125, 86);
+        [_capture setBackgroundImage:captureImage forState:UIControlStateNormal];
+        //[_capture setTitle:@"Capture" forState:UIControlStateNormal];
+        [_capture setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _capture.titleLabel.numberOfLines = 1;
+        _capture.titleLabel.adjustsFontSizeToFitWidth = YES;
+        _capture.titleLabel.lineBreakMode = NSLineBreakByClipping;
+        [_capture sizeThatFits:CGSizeMake(274, 189)];
+        [_capture addTarget:self action:@selector(captureImage:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_capture];
         
     }
     return self;
