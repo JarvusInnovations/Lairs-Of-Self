@@ -7,8 +7,7 @@
 //
 
 #import "MaskSelectionViewController.h"
-
-
+#import "CameraOverlayView.h"
 
 @interface MaskSelectionViewController ()
 
@@ -41,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Mask View Controller Did Load");
     [_carousel bringSubviewToFront:_proceedButton];
     _carousel.type = iCarouselTypeCoverFlow2;
 }
@@ -70,7 +70,6 @@
     NSLog(@"Selected image with index: %@",image);
     
     [self performSegueWithIdentifier:@"showWordToRemember" sender:self];
-    
 }
 
 // Carousel Config

@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *logo;
 @property (strong, nonatomic) IBOutlet UIButton *closeButton;
-@property (strong, nonatomic) IBOutlet UILabel *termsContent;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel1;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel2;
 @property (strong, nonatomic) IBOutlet UIButton *termsOfUseButton;
@@ -21,7 +20,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UIButton *ImSureButton;
 @property (strong, nonatomic) IBOutlet UILabel *omitContent;
+@property (strong, nonatomic) IBOutlet UIImageView *termsContent;
 
+- (IBAction)proceedToCamera:(id)sender;
 - (IBAction)termsOfUse:(id)sender;
 - (IBAction)closeTerms:(id)sender;
 - (IBAction)backToFront:(id)sender;

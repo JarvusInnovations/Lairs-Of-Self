@@ -56,7 +56,7 @@
 
         // Diplay type 1
         if ([display_type isEqualToString:@"1"]) {
-            NSLog(@"Display Type 1");
+            NSLog(@"Using Display Type 1");
             UIImage *eyeOverlayImage1 = [UIImage imageNamed:@"eyeoverlays-1.png"];
             UIImageView *eyeOverlay1 = [[UIImageView alloc] initWithImage:eyeOverlayImage1];
             eyeOverlay1.contentMode = UIViewContentModeScaleToFill;
@@ -65,7 +65,7 @@
             int mask1Y = [[standardUserDefaults objectForKey:@"maskOneY"] intValue];
             int mask1Height = [[standardUserDefaults objectForKey:@"maskOneHeight"] intValue];
             int mask1Width = [[standardUserDefaults objectForKey:@"maskOneWidth"] intValue];
-            
+
             if (!mask1X) {
                 mask1X = 170;
             }
@@ -73,19 +73,19 @@
                 mask1Y = 250;
             }
             if (!mask1Height) {
-                mask1Height = 500;
+                mask1Height = 295;
             }
             if (!mask1Width) {
-                mask1Width = 295;
+                mask1Width = 500;
             }
-            
+            // NSLog(@"mask x %d %d %d %d", mask1X, mask1Y, mask1Height, mask1Width);
             eyeOverlay1.frame = CGRectMake(mask1X, mask1Y, mask1Width, mask1Height);
             eyeOverlay1.alpha = .5;
             [self addSubview:eyeOverlay1];
             
         // Display type 2
         } else {
-            NSLog(@"Display Type 2");
+            NSLog(@"Using Display Type 2");
             UIImage *eyeOverlayImage2 = [UIImage imageNamed:@"eyeoverlays-2.png"];
             UIImageView *eyeOverlay2 = [[UIImageView alloc] initWithImage:eyeOverlayImage2];
             eyeOverlay2.contentMode = UIViewContentModeScaleToFill;
@@ -113,11 +113,11 @@
             [self addSubview:eyeOverlay2];
         }
         
-        UIImage *captureImage = [UIImage imageNamed:@"LOSButtonRightWhite.png"];
+        UIImage *captureImage = [UIImage imageNamed:@"eyes-capture-btn_360.png"];
         _capture = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _capture.frame = CGRectMake(430, 878, 125, 86);
         [_capture setBackgroundImage:captureImage forState:UIControlStateNormal];
-        [_capture setTitle:@"Capture" forState:UIControlStateNormal];
+        //[_capture setTitle:@"Capture" forState:UIControlStateNormal];
         [_capture setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _capture.titleLabel.numberOfLines = 1;
         _capture.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -127,11 +127,11 @@
         [self addSubview:_capture];
 
         
-        UIImage *backImage = [UIImage imageNamed:@"LOSButtonLeftWhite.png"];
+        UIImage *backImage = [UIImage imageNamed:@"eyes-back-btn_360.png"];
         _back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _back.frame = CGRectMake(213, 878, 125, 86);
         [_back setBackgroundImage:backImage forState:UIControlStateNormal];
-        [_back setTitle:@"Back" forState:UIControlStateNormal];
+        //[_back setTitle:@"Back" forState:UIControlStateNormal];
         [_back setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _back.titleLabel.numberOfLines = 1;
         _back.titleLabel.adjustsFontSizeToFitWidth = YES;

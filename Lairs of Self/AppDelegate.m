@@ -22,7 +22,6 @@
     NSString * display_type = [standardUserDefaults objectForKey:@"display_type"];
     NSString * server_address = [standardUserDefaults objectForKey:@"server_address"];
     
-    NSLog(@"Display Type %@", display_type);
     if (!display_type) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"1"] forKey:@"display_type"];
     }

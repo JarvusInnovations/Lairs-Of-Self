@@ -65,7 +65,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zSn-So-pd3" kind="presentation" id="XFV-Nf-Hvd"/>
+                                    <segue destination="zSn-So-pd3" kind="custom" customClass="ModalFromRightToLeft" id="XFV-Nf-Hvd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-10-i6E">
@@ -78,71 +78,53 @@
                                     <action selector="enterInsallation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7fk-KS-KrQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isX-Zk-drU">
-                                <rect key="frame" x="27" y="964" width="163" height="60"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Directly to Mask Gallery">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="527" translatesAutoresizingMaskIntoConstraints="NO" id="Xnk-Ja-EFg">
-                                <rect key="frame" x="121" y="106" width="527" height="88"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Terms of Use">
-                                        <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="30" name="HelveticaNeue-UltraLight"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-5O-x53">
                                 <rect key="frame" x="234" y="225" width="300" height="280"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-Ld-HEh">
-                                <rect key="frame" x="179" y="507" width="411" height="70"/>
+                                <rect key="frame" x="97" y="513" width="575" height="70"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Will you be seen in the installation?">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="30" name="HelveticaNeue-UltraLight"/>
+                                            <font key="NSFont" size="42" name="HelveticaNeue-UltraLight"/>
                                             <font key="NSOriginalFont" size="30" name="HelveticaNeue-UltraLight"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-EO-P8o">
-                                <rect key="frame" x="179" y="568" width="424" height="69"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Choosing &quot;Yes&quot; will display your photo in the installation. This is recommended.">
-                                        <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue-UltraLight"/>
-                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-UltraLight"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="aJG-25-kcS">
-                                <rect key="frame" x="179" y="496" width="463" height="192"/>
+                                <rect key="frame" x="92" y="467" width="575" height="289"/>
                                 <attributedString key="attributedText">
                                     <fragment content="You will not be able to interact with the installation. Are you sure you want to omit?">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="30" name="HelveticaNeue-UltraLight"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
+                                            <font key="NSFont" size="42" name="HelveticaNeue-UltraLight"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-EO-P8o">
+                                <rect key="frame" x="97" y="575" width="575" height="86"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Choosing &quot;Yes&quot; will display your photo in the installation. This is recommended.">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="25" name="HelveticaNeue-UltraLight"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-UltraLight"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="terms" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-6J-V6R">
+                                <rect key="frame" x="-71" y="0.0" width="900" height="1200"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -157,14 +139,14 @@
                         <outlet property="omitButton" destination="LeD-2P-SI1" id="EZ1-ud-Wyo"/>
                         <outlet property="omitContent" destination="aJG-25-kcS" id="kZV-vT-TXu"/>
                         <outlet property="proceedButton" destination="mP6-BT-aa8" id="5lT-vn-gHa"/>
-                        <outlet property="termsContent" destination="Xnk-Ja-EFg" id="kNt-Q8-gCE"/>
+                        <outlet property="termsContent" destination="0uu-6J-V6R" id="UD0-le-m6a"/>
                         <outlet property="termsOfUseButton" destination="SMz-bA-pFl" id="zHk-Gu-pBq"/>
                         <segue destination="kPV-Vb-GE1" kind="show" identifier="enterInstallation" id="aFS-Le-m2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="76"/>
+            <point key="canvasLocation" x="-893" y="-452"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="ptq-eE-kQ2">
@@ -190,17 +172,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackFiller" translatesAutoresizingMaskIntoConstraints="NO" id="OQr-WL-ZdY">
                                 <rect key="frame" x="0.0" y="883" width="801" height="141"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-f9-5NB">
-                                <rect key="frame" x="457" y="854" width="155" height="86"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRightWhite">
-                                    <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="proceedWithPicture:" destination="zSn-So-pd3" eventType="touchUpInside" id="uHE-ON-XiX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvl-7n-Z6b">
                                 <rect key="frame" x="183" y="854" width="155" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
@@ -212,6 +183,17 @@
                                     <action selector="retakePicture:" destination="zSn-So-pd3" eventType="touchUpInside" id="NZ1-fi-7OY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-f9-5NB">
+                                <rect key="frame" x="457" y="854" width="155" height="86"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRightWhite">
+                                    <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="proceedWithPicture:" destination="zSn-So-pd3" eventType="touchUpInside" id="uHE-ON-XiX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -221,8 +203,8 @@
                         <outlet property="maskImage" destination="WAq-m9-Drg" id="2VH-CP-VIC"/>
                         <outlet property="proceedButton" destination="mdb-f9-5NB" id="FWm-pe-13n"/>
                         <outlet property="retakeButton" destination="Uvl-7n-Z6b" id="mpq-jr-W3N"/>
-                        <segue destination="T1e-1F-XmW" kind="presentation" identifier="selectMask" id="Lhp-dR-pwC"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" id="6uM-KI-Xon"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="goToHome" customClass="ModalFromLeftToRight" id="6uM-KI-Xon"/>
+                        <segue destination="T1e-1F-XmW" kind="custom" identifier="selectMask" customClass="ModalFromRightToLeft" id="0HO-i9-DjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-hT-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,7 +237,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="restart" id="1hB-ry-2Xg"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="restart" customClass="ModalFromRightToLeft" id="1hB-ry-2Xg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaV-nx-Trx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,10 +272,10 @@
                                     <action selector="proceedButtonClicked:" destination="T1e-1F-XmW" eventType="touchUpInside" id="k7r-3B-445"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackTriangleUp" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-bq-LXH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-up" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-bq-LXH">
                                 <rect key="frame" x="222" y="911" width="325" height="113"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blackTriangleDown" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-KS-dB7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-down_360" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-KS-dB7">
                                 <rect key="frame" x="222" y="0.0" width="325" height="113"/>
                             </imageView>
                         </subviews>
@@ -307,7 +289,7 @@
                     <connections>
                         <outlet property="carousel" destination="oL3-k3-kew" id="oOd-Rq-I3f"/>
                         <outlet property="proceedButton" destination="DU6-Sy-2mY" id="yTO-cS-NCe"/>
-                        <segue destination="Q5K-Ii-O0B" kind="show" identifier="showWordToRemember" id="taB-jL-8KF"/>
+                        <segue destination="Q5K-Ii-O0B" kind="custom" identifier="showWordToRemember" customClass="ModalFromRightToLeft" id="taB-jL-8KF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,7 +315,7 @@
                                 <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See, change &amp; share What you are wearing. Remember this:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="365" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-Kp-2N7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See, change &amp; share what you are wearing. Remember this:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="365" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-Kp-2N7">
                                 <rect key="frame" x="191" y="210" width="387" height="102"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -359,13 +341,14 @@
         <image name="LOSButtonRight" width="274" height="189"/>
         <image name="LOSButtonRightWhite" width="274" height="189"/>
         <image name="blackFiller" width="1257" height="300"/>
-        <image name="blackTriangleDown" width="470" height="164"/>
-        <image name="blackTriangleUp" width="470" height="164"/>
         <image name="logo" width="444" height="414"/>
+        <image name="terms" width="1536" height="2048"/>
+        <image name="triangle-down_360" width="360" height="120"/>
+        <image name="triangle-up" width="708" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1hB-ry-2Xg"/>
         <segue reference="l17-E0-ZPd"/>
+        <segue reference="1hB-ry-2Xg"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setReturnToHome:NO];
-    
+    NSLog(@"Camera View Did Load");
     if (self.cameraView.image == nil) {
         _retakeButton.hidden = true;
         _proceedButton.hidden = true;
@@ -34,8 +34,11 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"Camera View Did Appear");
     [self.view bringSubviewToFront:_maskImage];
 
+    NSLog(@"Retun to Home Value: %hhd", _returnToHome);
+    
     if (_returnToHome == YES) {
         [self performSegueWithIdentifier:@"goToHome" sender:self];
     }
@@ -85,8 +88,17 @@
 - (IBAction)proceedWithPicture:(id)sender {
     NSLog(@"procdeed with picture");
     [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(_userImage) forKey:@"userImage"];
+    //[self dismissViewControllerAnimated:NO completion:nil];
     [self performSegueWithIdentifier:@"selectMask" sender:self];
 }
+
+#pragma mark - Navigation
+////In a storyboard-based application, you will often want to do a little preparation before navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    //Get the new view controller using [segue destinationViewController].
+//    //Pass the selected object to the new view controller.
+//    NSLog(@"Prepare for Segue");
+//}
 
 #pragma - mark Notifications
 
@@ -109,7 +121,8 @@
 }
 
 -(void)goBackToHome:(NSNotification *) notification {
-    [_picker dismissViewControllerAnimated:NO completion:nil];
+    NSLog(@"Set return to home");
     [self setReturnToHome:YES];
+    [_picker dismissViewControllerAnimated:NO completion:nil];    
 }
 @end

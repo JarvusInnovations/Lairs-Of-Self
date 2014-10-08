@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F10162419E5C06A00728EBD /* ModalFromLeftToRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F10162319E5C06A00728EBD /* ModalFromLeftToRight.m */; };
+		2F10162A19E5CB6700728EBD /* ModalFromRightToLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F10162919E5CB6700728EBD /* ModalFromRightToLeft.m */; };
 		2F1DDCDC19E4C61500A14740 /* SharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1DDCDB19E4C61500A14740 /* SharingViewController.m */; };
 		2F6551B219E16D8A007FE76C /* EnterInstallationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */; };
 		2F6551B419E1D5AD007FE76C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F6551B319E1D5AD007FE76C /* Settings.bundle */; };
@@ -22,7 +24,6 @@
 		2F6FF8CC19DECB23000EA569 /* MaskSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8CB19DECB23000EA569 /* MaskSelectionViewController.m */; };
 		2F6FF8CF19DEFF3A000EA569 /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */; };
 		2FA3A9E419E09A6C00D0515C /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA3A9E319E09A6C00D0515C /* APIRequest.m */; };
-		2FA3A9E719E0A43800D0515C /* NoPushAnimationSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA3A9E619E0A43800D0515C /* NoPushAnimationSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F10162219E5C06A00728EBD /* ModalFromLeftToRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalFromLeftToRight.h; sourceTree = "<group>"; };
+		2F10162319E5C06A00728EBD /* ModalFromLeftToRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalFromLeftToRight.m; sourceTree = "<group>"; };
+		2F10162819E5CB6700728EBD /* ModalFromRightToLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalFromRightToLeft.h; sourceTree = "<group>"; };
+		2F10162919E5CB6700728EBD /* ModalFromRightToLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalFromRightToLeft.m; sourceTree = "<group>"; };
 		2F1DDCDA19E4C61500A14740 /* SharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharingViewController.h; path = ../SharingViewController.h; sourceTree = "<group>"; };
 		2F1DDCDB19E4C61500A14740 /* SharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SharingViewController.m; path = ../SharingViewController.m; sourceTree = "<group>"; };
 		2F6551B019E16D8A007FE76C /* EnterInstallationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterInstallationViewController.h; sourceTree = "<group>"; };
@@ -64,8 +69,6 @@
 		2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayView.m; sourceTree = "<group>"; };
 		2FA3A9E219E09A6C00D0515C /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
 		2FA3A9E319E09A6C00D0515C /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
-		2FA3A9E519E0A43800D0515C /* NoPushAnimationSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPushAnimationSegue.h; sourceTree = "<group>"; };
-		2FA3A9E619E0A43800D0515C /* NoPushAnimationSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPushAnimationSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +191,10 @@
 		2FA3A9E819E0A43C00D0515C /* Segues */ = {
 			isa = PBXGroup;
 			children = (
-				2FA3A9E519E0A43800D0515C /* NoPushAnimationSegue.h */,
-				2FA3A9E619E0A43800D0515C /* NoPushAnimationSegue.m */,
+				2F10162219E5C06A00728EBD /* ModalFromLeftToRight.h */,
+				2F10162319E5C06A00728EBD /* ModalFromLeftToRight.m */,
+				2F10162819E5CB6700728EBD /* ModalFromRightToLeft.h */,
+				2F10162919E5CB6700728EBD /* ModalFromRightToLeft.m */,
 			);
 			name = Segues;
 			sourceTree = "<group>";
@@ -296,16 +301,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FA3A9E719E0A43800D0515C /* NoPushAnimationSegue.m in Sources */,
 				2F6FF8A519DEC112000EA569 /* ViewController.m in Sources */,
 				2F1DDCDC19E4C61500A14740 /* SharingViewController.m in Sources */,
 				2F6FF8CF19DEFF3A000EA569 /* CameraOverlayView.m in Sources */,
 				2FA3A9E419E09A6C00D0515C /* APIRequest.m in Sources */,
 				2F6FF8C719DECA2E000EA569 /* iCarousel.m in Sources */,
+				2F10162419E5C06A00728EBD /* ModalFromLeftToRight.m in Sources */,
 				2F6FF8C419DEC376000EA569 /* CameraViewController.m in Sources */,
 				2F6FF8CC19DECB23000EA569 /* MaskSelectionViewController.m in Sources */,
 				2F6551B219E16D8A007FE76C /* EnterInstallationViewController.m in Sources */,
 				2F6FF8A219DEC112000EA569 /* AppDelegate.m in Sources */,
+				2F10162A19E5CB6700728EBD /* ModalFromRightToLeft.m in Sources */,
 				2F6FF89F19DEC112000EA569 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

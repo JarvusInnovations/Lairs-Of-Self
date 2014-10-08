@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "APIRequest.h"
-#import "NoPushAnimationSegue.h"
 
 @interface ViewController ()
 
@@ -39,9 +38,20 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)termsOfUse:(id)sender {
+- (IBAction)proceedToCamera:(id)sender {
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromRight;
+    [self.view.window.layer addAnimation:transition forKey:nil];
     
-    [self updateAssetAlphas:.2];
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (IBAction)termsOfUse:(id)sender {
+
+    [self updateAssetAlphas:.1];
     [self updateButtonEnablement:NO];
     
     _closeButton.hidden = false;
