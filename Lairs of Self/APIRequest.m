@@ -22,7 +22,7 @@
 
 -(void)makeAPIRequestWithMask:(NSInteger)index andUserImage:(UIImage*)image {
     
-    NSLog(@"Make API with Mask %d : %@", index, image);
+    NSLog(@"Make API with Mask %ld : %@", (long)index, image);
     NSLog(@"Request URL %@", _requestUrl);
     
     NSError *err;
@@ -66,7 +66,7 @@
     [request setHTTPBody:body];
     
     // set the content-length
-    NSString *postLength = [NSString stringWithFormat:@"%d", [body length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[body length]];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     
     // set URL

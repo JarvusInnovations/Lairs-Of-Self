@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1DDCDC19E4C61500A14740 /* SharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1DDCDB19E4C61500A14740 /* SharingViewController.m */; };
 		2F6551B219E16D8A007FE76C /* EnterInstallationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */; };
 		2F6551B419E1D5AD007FE76C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F6551B319E1D5AD007FE76C /* Settings.bundle */; };
 		2F6FF89F19DEC112000EA569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF89E19DEC112000EA569 /* main.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F1DDCDA19E4C61500A14740 /* SharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharingViewController.h; path = ../SharingViewController.h; sourceTree = "<group>"; };
+		2F1DDCDB19E4C61500A14740 /* SharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SharingViewController.m; path = ../SharingViewController.m; sourceTree = "<group>"; };
 		2F6551B019E16D8A007FE76C /* EnterInstallationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterInstallationViewController.h; sourceTree = "<group>"; };
 		2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterInstallationViewController.m; sourceTree = "<group>"; };
 		2F6551B319E1D5AD007FE76C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				2F6FF8C319DEC376000EA569 /* CameraViewController.m */,
 				2F6FF8CA19DECB23000EA569 /* MaskSelectionViewController.h */,
 				2F6FF8CB19DECB23000EA569 /* MaskSelectionViewController.m */,
+				2F1DDCDA19E4C61500A14740 /* SharingViewController.h */,
+				2F1DDCDB19E4C61500A14740 /* SharingViewController.m */,
 				2F6551B019E16D8A007FE76C /* EnterInstallationViewController.h */,
 				2F6551B119E16D8A007FE76C /* EnterInstallationViewController.m */,
 			);
@@ -293,6 +298,7 @@
 			files = (
 				2FA3A9E719E0A43800D0515C /* NoPushAnimationSegue.m in Sources */,
 				2F6FF8A519DEC112000EA569 /* ViewController.m in Sources */,
+				2F1DDCDC19E4C61500A14740 /* SharingViewController.m in Sources */,
 				2F6FF8CF19DEFF3A000EA569 /* CameraOverlayView.m in Sources */,
 				2FA3A9E419E09A6C00D0515C /* APIRequest.m in Sources */,
 				2F6FF8C719DECA2E000EA569 /* iCarousel.m in Sources */,

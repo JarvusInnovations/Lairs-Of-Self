@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *closeButton;
 @property (strong, nonatomic) IBOutlet UILabel *termsContent;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel1;
+@property (strong, nonatomic) IBOutlet UILabel *contentLabel2;
 @property (strong, nonatomic) IBOutlet UIButton *termsOfUseButton;
 @property (strong, nonatomic) IBOutlet UIButton *omitButton;
 @property (strong, nonatomic) IBOutlet UIButton *proceedButton;

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "NoPushAnimationSegue.h"
+#import "ViewController.h"
+
 
 @interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

@@ -1,33 +1,31 @@
 //
-//  EnterInstallationViewController.m
+//  SharingViewController.m
 //  Lairs of Self
 //
-//  Created by Tyler Wiest on 10/5/14.
+//  Created by Tyler Wiest on 10/7/14.
 //  Copyright (c) 2014 Jarvus Innovations. All rights reserved.
 //
 
-#import "EnterInstallationViewController.h"
+#import "SharingViewController.h"
 
-@interface EnterInstallationViewController ()
+@interface SharingViewController ()
 
 @end
 
-@implementation EnterInstallationViewController
+@implementation SharingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [NSTimer scheduledTimerWithTimeInterval:3
-                                      target:self
-                                    selector:@selector(toStartController)
-                                    userInfo:nil
-                                     repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:10
+                                     target:self
+                                   selector:@selector(toEnterInstallation)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
-- (void)toStartController
-{
-    NSLog(@"to start controller");
-    [self performSegueWithIdentifier:@"restart" sender:self];
+- (void)toEnterInstallation {
+    [self performSegueWithIdentifier:@"toEnterInstallation" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

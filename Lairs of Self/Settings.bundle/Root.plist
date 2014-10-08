@@ -54,6 +54,82 @@
 				<string>2</string>
 			</array>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Mask 1 (784 x 462)</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>X</string>
+			<key>Key</key>
+			<string>maskOneX</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Y</string>
+			<key>Key</key>
+			<string>maskOneY</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Width</string>
+			<key>Key</key>
+			<string>maskOneWidth</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Height</string>
+			<key>Key</key>
+			<string>maskOneHeight</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Mask 2 (666 x 272)</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>X</string>
+			<key>Key</key>
+			<string>maskTwoX</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Y</string>
+			<key>Key</key>
+			<string>maskTwoY</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Width</string>
+			<key>Key</key>
+			<string>maskTwoWidth</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Height</string>
+			<key>Key</key>
+			<string>maskTwoHeight</string>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

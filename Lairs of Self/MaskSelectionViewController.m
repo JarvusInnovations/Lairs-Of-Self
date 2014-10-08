@@ -54,7 +54,7 @@
 // Image Selected
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"Selected image with index: %i",index);
+    NSLog(@"Selected image with index: %li",(long)index);
 }
 
 - (IBAction)proceedButtonClicked:(id)sender {
@@ -66,10 +66,10 @@
     APIRequest *request = [[APIRequest alloc] init];
     [request makeAPIRequestWithMask:index andUserImage:image];
     
-    NSLog(@"Selected image with index: %i",index);
+    NSLog(@"Selected image with index: %li",(long)index);
     NSLog(@"Selected image with index: %@",image);
     
-    [self performSegueWithIdentifier:@"enterInstallation" sender:self];
+    [self performSegueWithIdentifier:@"showWordToRemember" sender:self];
     
 }
 
@@ -122,7 +122,7 @@
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    NSLog(@"Count: %d", [_items count]);
+    NSLog(@"Count: %lu", (unsigned long)[_items count]);
     //return the total number of items in the carousel
     return [_items count];
 }

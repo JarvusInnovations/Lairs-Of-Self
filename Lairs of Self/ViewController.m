@@ -66,6 +66,7 @@
     _omitButton.hidden = false;
     _proceedButton.hidden = false;
     _contentLabel1.hidden = false;
+    _contentLabel2.hidden = false;
 }
 
 - (IBAction)enterInsallation:(id)sender {
@@ -76,6 +77,8 @@
     _omitButton.hidden = true;
     _proceedButton.hidden = true;
     _contentLabel1.hidden = true;
+    _contentLabel2.hidden = true;
+
     
     _backButton.hidden = false;
     _ImSureButton.hidden = false;
@@ -86,6 +89,7 @@
 - (void)updateAssetAlphas:(float)value {
     _logo.alpha = value;
     _contentLabel1.alpha = value;
+    _contentLabel2.alpha = value;
     _omitButton.alpha = value;
     _proceedButton.alpha = value;
     _termsOfUseButton.alpha = value;

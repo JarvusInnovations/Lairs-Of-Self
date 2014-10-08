@@ -19,8 +19,8 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-2P-SI1">
                                 <rect key="frame" x="213" y="878" width="125" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Omit" backgroundImage="LOSButtonLeft">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="No" backgroundImage="LOSButtonLeft">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -29,7 +29,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkV-pY-tQc">
                                 <rect key="frame" x="213" y="878" width="125" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Back" backgroundImage="LOSButtonLeft">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -38,8 +38,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-ov-Tpd">
-                                <rect key="frame" x="322" y="751" width="125" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="317" y="752" width="125" height="86"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Close" backgroundImage="LOSButtonLeft">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -49,6 +49,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-bA-pFl">
                                 <rect key="frame" x="339" y="20" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Terms of Use">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,8 +60,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP6-BT-aa8">
                                 <rect key="frame" x="430" y="878" width="125" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRight">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Yes" backgroundImage="LOSButtonRight">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -69,7 +70,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-10-i6E">
                                 <rect key="frame" x="430" y="878" width="125" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="I'm Sure" backgroundImage="LOSButtonRight">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,13 +80,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isX-Zk-drU">
                                 <rect key="frame" x="27" y="964" width="163" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Directly to Mask Gallery">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="T1e-1F-XmW" kind="show" id="73S-b2-TXy"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="527" translatesAutoresizingMaskIntoConstraints="NO" id="Xnk-Ja-EFg">
                                 <rect key="frame" x="121" y="106" width="527" height="88"/>
@@ -93,7 +92,7 @@
                                     <fragment content="Terms of Use">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <font key="NSFont" size="30" name="HelveticaNeue-UltraLight"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -101,21 +100,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-5O-x53">
-                                <rect key="frame" x="234" y="225" width="300" height="274"/>
+                                <rect key="frame" x="234" y="225" width="300" height="280"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-Ld-HEh">
-                                <rect key="frame" x="124" y="513" width="521" height="147"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-Ld-HEh">
+                                <rect key="frame" x="179" y="507" width="411" height="70"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Gain Full Access to the installation. ">
+                                    <fragment content="Will you be seen in the installation?">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <font key="NSFont" size="30" name="HelveticaNeue-UltraLight"/>
+                                            <font key="NSOriginalFont" size="30" name="HelveticaNeue-UltraLight"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="First see &amp; be seen.">
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="521" translatesAutoresizingMaskIntoConstraints="NO" id="vf0-EO-P8o">
+                                <rect key="frame" x="179" y="568" width="424" height="69"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Choosing &quot;Yes&quot; will display your photo in the installation. This is recommended.">
                                         <attributes>
-                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-UltraLight"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-UltraLight"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
                                         </attributes>
                                     </fragment>
@@ -123,12 +131,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="aJG-25-kcS">
-                                <rect key="frame" x="129" y="513" width="500" height="192"/>
+                                <rect key="frame" x="179" y="496" width="463" height="192"/>
                                 <attributedString key="attributedText">
                                     <fragment content="You will not be able to interact with the installation. Are you sure you want to omit?">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="30" name="HiraKakuProN-W3"/>
+                                            <font key="NSFont" size="30" name="HelveticaNeue-UltraLight"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
                                         </attributes>
                                     </fragment>
@@ -144,6 +152,7 @@
                         <outlet property="backButton" destination="HkV-pY-tQc" id="4OU-aV-cRf"/>
                         <outlet property="closeButton" destination="MGa-ov-Tpd" id="uqt-ls-4Yk"/>
                         <outlet property="contentLabel1" destination="PNS-Ld-HEh" id="E5v-22-TMe"/>
+                        <outlet property="contentLabel2" destination="vf0-EO-P8o" id="NMK-T6-NRq"/>
                         <outlet property="logo" destination="Yyq-5O-x53" id="cxB-zu-t10"/>
                         <outlet property="omitButton" destination="LeD-2P-SI1" id="EZ1-ud-Wyo"/>
                         <outlet property="omitContent" destination="aJG-25-kcS" id="kZV-vT-TXu"/>
@@ -155,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-325" y="184"/>
+            <point key="canvasLocation" x="-57" y="76"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="ptq-eE-kQ2">
@@ -183,7 +192,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-f9-5NB">
                                 <rect key="frame" x="457" y="854" width="155" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Proceed" backgroundImage="LOSButtonRightWhite">
                                     <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,7 +203,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvl-7n-Z6b">
                                 <rect key="frame" x="183" y="854" width="155" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Retake" backgroundImage="LOSButtonLeftWhite">
                                     <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,6 +222,7 @@
                         <outlet property="proceedButton" destination="mdb-f9-5NB" id="FWm-pe-13n"/>
                         <outlet property="retakeButton" destination="Uvl-7n-Z6b" id="mpq-jr-W3N"/>
                         <segue destination="T1e-1F-XmW" kind="presentation" identifier="selectMask" id="Lhp-dR-pwC"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToHome" id="6uM-KI-Xon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-hT-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,7 +246,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You may enter the installation." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="451" translatesAutoresizingMaskIntoConstraints="NO" id="N4b-t2-QsY">
                                 <rect key="frame" x="159" y="504" width="451" height="101"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -250,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaV-nx-Trx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="1340"/>
+            <point key="canvasLocation" x="1527" y="1650"/>
         </scene>
         <!--Mask Selection View Controller-->
         <scene sceneID="79b-At-alT">
@@ -266,13 +276,13 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are you wearing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="365" translatesAutoresizingMaskIntoConstraints="NO" id="400-wB-w7m">
                                 <rect key="frame" x="202" y="166" width="365" height="57"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Sy-2mY">
                                 <rect key="frame" x="309" y="765" width="150" height="103"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Proceed" backgroundImage="LOSButtonRight">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -297,12 +307,49 @@
                     <connections>
                         <outlet property="carousel" destination="oL3-k3-kew" id="oOd-Rq-I3f"/>
                         <outlet property="proceedButton" destination="DU6-Sy-2mY" id="yTO-cS-NCe"/>
-                        <segue destination="kPV-Vb-GE1" kind="show" identifier="enterInstallation" id="WVw-Ta-YNz"/>
+                        <segue destination="Q5K-Ii-O0B" kind="show" identifier="showWordToRemember" id="taB-jL-8KF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2086" y="636"/>
+            <point key="canvasLocation" x="1896" y="76"/>
+        </scene>
+        <!--Sharing View Controller-->
+        <scene sceneID="f7p-b6-Cwn">
+            <objects>
+                <viewController id="Q5K-Ii-O0B" customClass="SharingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kzb-la-6sr"/>
+                        <viewControllerLayoutGuide type="bottom" id="CNA-kI-ejd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFp-AX-iPL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="365" translatesAutoresizingMaskIntoConstraints="NO" id="JLG-9g-nPi">
+                                <rect key="frame" x="234" y="426" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See, change &amp; share What you are wearing. Remember this:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="365" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-Kp-2N7">
+                                <rect key="frame" x="191" y="210" width="387" height="102"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <segue destination="kPV-Vb-GE1" kind="presentation" identifier="toEnterInstallation" id="l17-E0-ZPd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWI-SE-E8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2803" y="76"/>
         </scene>
     </scenes>
     <resources>
@@ -314,11 +361,11 @@
         <image name="blackFiller" width="1257" height="300"/>
         <image name="blackTriangleDown" width="470" height="164"/>
         <image name="blackTriangleUp" width="470" height="164"/>
-        <image name="logo" width="644" height="588"/>
+        <image name="logo" width="444" height="414"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WVw-Ta-YNz"/>
-        <segue reference="Lhp-dR-pwC"/>
+        <segue reference="1hB-ry-2Xg"/>
+        <segue reference="l17-E0-ZPd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>
