@@ -11,4 +11,6 @@
 
 @interface SharingViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *wordLabel;
+
 @end

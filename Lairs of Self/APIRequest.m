@@ -16,7 +16,10 @@
     if (self) {
         NSString *requestUrlString = [[NSUserDefaults standardUserDefaults] objectForKey:@"server_address"];
         _requestUrl = [NSURL URLWithString:requestUrlString];
+        _maskURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/maskID", requestUrlString]];
+        _omitUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/omitUser", requestUrlString]];
     }
+    
     return self;
 }
 
@@ -26,8 +29,7 @@
     NSLog(@"Request URL %@", _requestUrl);
     
     NSError *err;
-    
-    NSString *BoundaryConstant = [NSString stringWithFormat:@"boundry"];
+    //NSString *BoundaryConstant = [NSString stringWithFormat:@"boundry"];
     NSString *boundary = [NSString stringWithFormat:@"boundry"];
     NSString *FileParamConstant = [NSString stringWithFormat:@"userImage.jpg"];
     
@@ -35,7 +37,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [request setHTTPShouldHandleCookies:NO];
-    [request setTimeoutInterval:30];
+    [request setTimeoutInterval:5];
     [request setHTTPMethod:@"POST"];
     
     // set Content-Type in HTTP header
@@ -44,11 +46,6 @@
     
     // post body
     NSMutableData *body = [NSMutableData data];
-    
-    // add mask index
-    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", BoundaryConstant] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%ld\"\r\n\r\n", (long)index] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"%ld\r\n", (long)index] dataUsingEncoding:NSUTF8StringEncoding]];
 
     // add image data
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
@@ -61,8 +58,6 @@
     }
     
     [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    // setting the body of the post to the reqeust
     [request setHTTPBody:body];
     
     // set the content-length
@@ -73,10 +68,43 @@
     [request setURL:_requestUrl];
     
     NSURLResponse *response;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-    NSLog(@"Response Data %@", responseData);
-    NSLog(@"Response %@", response);
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
     
+    [self sendMaskIDForImage:index fileName:FileParamConstant];
+}
+
+-(void)sendMaskIDForImage:(NSInteger)index fileName:(NSString*)fileName {
+    
+    NSLog(@"Sending Mask ID");
+    NSLog(@"Index %d", index);
+    NSLog(@"FileName: %@", fileName);
+    
+    NSError* error;
+    NSError *err;
+    
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",index], @"maskID", fileName, @"fileName", nil];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:_maskURL];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:0 error:&error]];
+    
+    NSURLResponse *response;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSString *responseWord = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+    [[NSUserDefaults standardUserDefaults] setObject:responseWord forKey:@"user_word"];
+    NSLog(@"Users Word: %@", responseWord);
+}
+
+-(void)sendOmitRequest {
+    NSError *err;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:_omitUrl];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *response;
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
 }
 
 -(void)makeAPIRequest {

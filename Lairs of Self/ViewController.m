@@ -65,7 +65,6 @@
     
     _closeButton.hidden = true;
     _termsContent.hidden = true;
-    
 }
 
 - (IBAction)backToFront:(id)sender {
@@ -80,6 +79,8 @@
 }
 
 - (IBAction)enterInsallation:(id)sender {
+    APIRequest *request = [[APIRequest alloc] init];
+    [request sendOmitRequest];
     [self performSegueWithIdentifier:@"enterInstallation" sender:self];
 }
 
@@ -93,7 +94,6 @@
     _backButton.hidden = false;
     _ImSureButton.hidden = false;
     _omitContent.hidden = false;
-    
 }
 
 - (void)updateAssetAlphas:(float)value {

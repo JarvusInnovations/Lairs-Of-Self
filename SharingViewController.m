@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *responseWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_word"];
+    if (responseWord) {
+        _wordLabel.text = responseWord;
+    }
+    
     [NSTimer scheduledTimerWithTimeInterval:10
                                      target:self
                                    selector:@selector(toEnterInstallation)

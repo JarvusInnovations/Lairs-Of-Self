@@ -12,8 +12,11 @@
 @interface APIRequest : NSObject
 
 @property (nonatomic, strong) NSURL *requestUrl;
+@property (nonatomic, strong) NSURL *maskURL;
+@property (nonatomic, strong) NSURL *omitUrl;
 
 -(void)makeAPIRequest;
 -(void)makeAPIRequestWithMask:(NSInteger)index andUserImage:(UIImage *)image;
+-(void)sendOmitRequest;
 
 @end
