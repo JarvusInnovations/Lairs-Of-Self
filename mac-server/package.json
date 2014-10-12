@@ -6,6 +6,7 @@
         "url": "https://github.com/JarvusInnovations/Lairs-Of-Self"
     },
     "dependencies": {
-        "busboy": "*"
+        "busboy": "*",
+        "moment": "*"
     }
 }
