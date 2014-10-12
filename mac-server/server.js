@@ -40,8 +40,14 @@ var app = require('http').createServer(function (req, res) {
 
     // Handle omit request
     } else if (req.url == '/omit' && req.method == 'POST') {
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end();
+        res.writeHead(200, {
+            'Connection': 'close',
+            'Content-Type': 'application/json'
+        });
+
+        res.end(JSON.stringify({
+            success: true
+        }));
 
         // TODO: post omit signal to MIDI
         console.log('\tsent omission signal over MIDI');
@@ -50,8 +56,15 @@ var app = require('http').createServer(function (req, res) {
     } else {
         console.log('\trequest not recognized');
 
-        res.writeHead(404, {'Content-Type': 'text/plain'});
-        res.end("request not recognized");
+        res.writeHead(404, {
+            'Connection': 'close',
+            'Content-Type': 'application/json'
+        });
+
+        res.end(JSON.stringify({
+            success: false,
+            message: 'request not recognized'
+        }));
     }
 });
 
