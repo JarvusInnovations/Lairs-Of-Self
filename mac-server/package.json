@@ -1,0 +1,11 @@
+{
+    "name": "lairs-mac-server",
+    "description": "The mac-server component for the Lairs of Self installation.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JarvusInnovations/Lairs-Of-Self"
+    },
+    "dependencies": {
+        "busboy": "*"
+    }
+}
