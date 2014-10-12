@@ -3,7 +3,7 @@ Lairs-Of-Self
 
 ## Components
 
-### <kbd>ipad-app</kbd>
+### `ipad-app`
 UI for kiosk that visitors use first when they arrive at the event.
 
 #### Settings
@@ -22,11 +22,11 @@ Edit in Settings -> Lairs of Self
 - Width: 300
 
 
-### <kbd>mac-server</kbd>
+### `mac-server`
 NodeJS daemon and HTML5 UI for each Mac Mini that iPad kiosks will be individually paired to for rendering its submissions to a display output.
 
-### <kbd>emergence-server</kbd>
+### `emergence-server`
 Online API for uploading submissions to from all mac servers.
 
-### <kbd>touch-webapp</kbd>
+### `touch-webapp`
 Mobile webapp for visitors to modify their submissions during the event
