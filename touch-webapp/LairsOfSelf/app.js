@@ -26,7 +26,7 @@ Ext.application({
             type: 'card',
             animation: {
                 type: 'slide',
-                direction: 'down'
+                direction: 'left'
             }
         }
     },
