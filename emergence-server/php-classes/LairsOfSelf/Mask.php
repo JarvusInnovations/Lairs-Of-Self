@@ -18,11 +18,16 @@ class Mask extends \ActiveRecord
             'type' => 'string',
             'unique' => true
         ],
-        'ImageID' => 'uint'
+        'OverlayID' => 'uint',
+        'TokenImageID' => 'uint'
     ];
 
     public static $relationships = [
-        'Image' => [
+        'Overlay' => [
+            'type' => 'one-one',
+            'class' => Media::class
+        ],
+        'TokenImage' => [
             'type' => 'one-one',
             'class' => Media::class
         ]

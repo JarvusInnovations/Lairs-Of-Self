@@ -15,7 +15,8 @@
         {foreach item=Mask from=$data}
             <li>
                 <a href="{$Mask->getURL()}">
-                    <img src="{$Mask->Image->getThumbnailRequest(100, 100)}" alt="{$Mask->Title|escape}">
+                    <img src="{$Mask->Overlay->getThumbnailRequest(100, 100)}" alt="{$Mask->Title|escape}">
+                    <img src="{$Mask->TokenImage->getThumbnailRequest(100, 100)}" alt="{$Mask->Title|escape}">
                     <br>
                     {$Mask->Title|escape}
                 </a>

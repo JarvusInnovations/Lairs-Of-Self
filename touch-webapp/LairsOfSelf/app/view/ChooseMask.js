@@ -21,7 +21,7 @@ Ext.define('LairsOfSelf.view.ChooseMask', {
                     {
                         name: 'photoUrl',
                         convert: function(v, r) {
-                            return '/thumbnail/' + r.raw.ImageID + '/200x200';
+                            return '/thumbnail/' + r.raw.TokenImageID + '/200x200';
                         }
                     }
                 ],
