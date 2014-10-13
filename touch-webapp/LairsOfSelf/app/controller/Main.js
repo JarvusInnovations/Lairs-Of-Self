@@ -41,7 +41,8 @@ Ext.define('LairsOfSelf.controller.Main', {
                 autoCreate: true,
 
                 xtype: 'choosemaskview'
-            }
+            },
+            fishView: 'choosemaskview fishview'
         },
 
         control: {
@@ -51,7 +52,7 @@ Ext.define('LairsOfSelf.controller.Main', {
 //            chooseMaskView: {
 //                activate: 'onChooseMaskActivate'
 //            },
-            'choosemaskview fishview': {
+            fishView: {
                 selectionchange: 'onChooseMaskSelectionChange'
             },
             'choosemaskview button[action=back]': {
@@ -123,7 +124,8 @@ Ext.define('LairsOfSelf.controller.Main', {
                 include: 'Mask'
             },
             success: function(response) {
-                var r = Ext.decode(response.responseText);
+                var r = Ext.decode(response.responseText),
+                    chooseMaskView, fishView;
 
                 if (r.success && r.data) {
                     mainView.setShowPasswordField(false);
@@ -135,7 +137,10 @@ Ext.define('LairsOfSelf.controller.Main', {
                         // fail silently, they'll just have to input their password again next time
                     }
 
-                    Ext.Viewport.setActiveItem(me.getChooseMaskView());
+                    chooseMaskView = me.getChooseMaskView();
+                    fishView = me.getFishView();
+                    fishView.select(fishView.getStore().getById(r.data.MaskID));
+                    Ext.Viewport.setActiveItem(chooseMaskView);
                 } else {
                     Ext.Msg.alert('Please try again', 'Something went wrong&hellip; try again in a few minutes');
                 }

@@ -27,7 +27,7 @@ Ext.define('LairsOfSelf.view.Main', {
             labelAlign: 'top'
 
             // <debug>
-            ,value: 'e990'
+            ,value: 'that'
             // </debug>
         },{
             xtype: 'component',
