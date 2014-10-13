@@ -53,10 +53,10 @@
 		2F6FF8A119DEC112000EA569 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2F6FF8A319DEC112000EA569 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2F6FF8A419DEC112000EA569 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2F6FF8A719DEC112000EA569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2F6FF8A919DEC112000EA569 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2F6FF8A719DEC112000EA569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F6FF8A919DEC112000EA569 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
 		2F6FF8AC19DEC112000EA569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2F6FF8B219DEC112000EA569 /* Lairs of SelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lairs of SelfTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6FF8B219DEC112000EA569 /* Lairs of SelfTests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "Lairs of SelfTests"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6FF8B719DEC112000EA569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6FF8B819DEC112000EA569 /* Lairs_of_SelfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lairs_of_SelfTests.m; sourceTree = "<group>"; };
 		2F6FF8C219DEC376000EA569 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2F6FF89919DEC112000EA569 /* Lairs of Self.app */,
-				2F6FF8B219DEC112000EA569 /* Lairs of SelfTests.xctest */,
+				2F6FF8B219DEC112000EA569 /* Lairs of SelfTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			);
 			name = "Lairs of SelfTests";
 			productName = "Lairs of SelfTests";
-			productReference = 2F6FF8B219DEC112000EA569 /* Lairs of SelfTests.xctest */;
+			productReference = 2F6FF8B219DEC112000EA569 /* Lairs of SelfTests */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */

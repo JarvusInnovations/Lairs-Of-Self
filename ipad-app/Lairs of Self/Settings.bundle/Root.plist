@@ -130,6 +130,44 @@
 			<key>Key</key>
 			<string>maskTwoHeight</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Mask Selection Settings</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Mask Width</string>
+			<key>Key</key>
+			<string>maskWidth</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Mask Height</string>
+			<key>Key</key>
+			<string>maskHeight</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Mask X</string>
+			<key>Key</key>
+			<string>maskX</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Mask Y</string>
+			<key>Key</key>
+			<string>Mask Y</string>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

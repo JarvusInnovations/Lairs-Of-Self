@@ -12,23 +12,37 @@
 @interface MaskSelectionViewController ()
 
 @property (nonatomic, strong) NSMutableArray *items;
+@property float maskHeight;
+@property float maskWidth;
 
 @end
 
 @implementation MaskSelectionViewController
 
 - (void)awakeFromNib {
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    _maskHeight = [[standardUserDefaults objectForKey:@"maskHeight"] floatValue];
+    _maskWidth = [[standardUserDefaults objectForKey:@"maskWidth"] floatValue];
+    
+    if (!_maskHeight) {
+        _maskHeight = 400.0f;
+    }
+    if (!_maskWidth) {
+        _maskWidth = 400.0f;
+    }
+    NSLog(@"Maske Height %f %f", _maskHeight , _maskWidth );
+    
     _items = [[NSMutableArray alloc]initWithObjects:
-              @"01LOSMaskOverlays_Bymyselfbemyself.png",
-              @"02LOSMaskOverlays_Pullhardkeepittogether.png",
-              @"03LOSMaskOverlays_NEVEREVERENTERAGAIN.png",
-              @"04LOSMaskOverlays_Somethingsgottarub.png",
-              @"05LOSMaskOverlays_Hornetsinacrystal.png",
-              @"06LOSMaskOverlays_SlickandSwollen.png",
-              @"07LOSMaskOverlays_Burythebreadcrumbs.png",
-              @"08LOSMaskOverlays_Glassinajamjar.png",
-              @"09LOSMaskOverlays_Spillandspilleasily.png",
-              @"10LOSMaskOverlays_Boilingwithskeletons.png",nil];
+              @"01BymyselfbemyselfLOSToken.png",
+              @"02PullhardkeepittogetherLOStoken.png",
+              @"03NEVERENTEREVERAGAINLOStoken.png",
+              @"04SomethingsgottorubLOStoken.png",
+              @"05HornetsinacrystalLOStoken.png",
+              @"06SlickandswollenLOStoken.png",
+              @"07BurythebreadcrumbsLOStoken.png",
+              @"08GlassinajamjarLOStoken.png",
+              @"09SpillandspilleasilyLOStoken.png",
+              @"10BoilingwithskeletonsLOStoken.png",nil];
 }
 
 - (void)dealloc

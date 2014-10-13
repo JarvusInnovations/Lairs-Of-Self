@@ -16,9 +16,6 @@
     UIViewController *srcViewController = (UIViewController *) self.sourceViewController;
     UIViewController *destViewController = (UIViewController *) self.destinationViewController;
     
-    NSLog(@"Source: %@", srcViewController);
-    NSLog(@"Target: %@", destViewController);
-    
     CATransition *transition = [CATransition animation];
     transition.duration = 0.3;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
