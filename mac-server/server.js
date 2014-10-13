@@ -1,9 +1,12 @@
-var http = require('http'),
+var util = require('util'),
+    http = require('http'),
     path = require('path'),
     os = require('os'),
     fs = require('fs'),
     moment = require('moment'),
-    Busboy = require('busboy');
+    tmp = require('tmp'),
+    Busboy = require('busboy'),
+    FormData = require('form-data');
 
 var app = require('http').createServer(function (req, res) {
     console.log('\n' + moment().format('YYYY-MM-DD HH:mm:ss') + '\t' + req.method + ' ' + req.url);
@@ -11,11 +14,21 @@ var app = require('http').createServer(function (req, res) {
     // Handle submit request
     if (req.url == '/submit' && req.method == 'POST') {
         var busboy = new Busboy({ headers: req.headers });
+            postForm = new FormData();
 
-        busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {      
-            var saveTo = path.join(os.tmpDir(), path.basename(fieldname));
-            file.pipe(fs.createWriteStream(saveTo));
-            console.log('\tsaved photo: ' + saveTo);
+        busboy.on('file', function(fieldName, file, filename, encoding, mimetype) {
+            tmp.tmpName(function(err, tempPath) {
+                file.pipe(fs.createWriteStream(tempPath));
+                console.log('\tsaved file ' + filename + ' to ' + tempPath);
+
+                postForm.append(fieldName, fs.createReadStream(tempPath));
+                console.log('\tattached file ' + fieldName + '=' + filename);
+            });
+        });
+
+        busboy.on('field', function(fieldName, fieldValue) {
+            postForm.append(fieldName, fieldValue);
+            console.log('\tattached field ' + fieldName + '=' + fieldValue);
         });
 
         busboy.on('finish', function() {
@@ -33,7 +46,15 @@ var app = require('http').createServer(function (req, res) {
             console.log('\tsent submission signal over MIDI');
 
             // TODO: post submission to emergence-server
-            console.log('\tposted submission to emergence-server');
+            postForm.submit({
+                host: 'lairs-of-self.sandbox01.jarv.us',
+                path: '/submissions',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }, function(postError, postResponse) {
+                console.log('\tposted submission to emergence-server and got status code ' + postResponse.statusCode);
+            });
         });
 
         req.pipe(busboy);
