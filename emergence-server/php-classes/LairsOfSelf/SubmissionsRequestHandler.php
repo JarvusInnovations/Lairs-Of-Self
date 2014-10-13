@@ -9,8 +9,7 @@ class SubmissionsRequestHandler extends \RecordsRequestHandler
 
     public static function handleRecordsRequest($action = false)
 	{
-		switch ($action ? $action : $action = static::shiftPath())
-		{
+		switch ($action ? $action : $action = static::shiftPath()) {
 			case 'by-password':
     			if (
                     ($password = static::shiftPath()) &&
@@ -22,7 +21,7 @@ class SubmissionsRequestHandler extends \RecordsRequestHandler
 					return static::throwRecordNotFoundError($action);
 				}
             default:
-                return static::handleRecordsRequest($action);
+                return parent::handleRecordsRequest($action);
 		}
 	}
 
