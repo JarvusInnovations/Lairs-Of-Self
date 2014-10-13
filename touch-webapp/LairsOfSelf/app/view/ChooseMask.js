@@ -9,19 +9,19 @@ Ext.define('LairsOfSelf.view.ChooseMask', {
         cls: 'lairs-view-choosemask',
 
         items: [{
-            xtype: 'component',
-            itemId: 'submissionViewer',
-            tpl: '<img src="{photoUrl}">'
-        },{
             xtype: 'fishview',
             itemSize: 200,
             height: 200,
             store: {
                 fields: [
                     {
+                        name: 'id',
+                        mapping: 'ID'
+                    },
+                    {
                         name: 'photoUrl',
                         convert: function(v, r) {
-                            return '/thumbnail/' + r.raw.ImageID + '/200x200';
+                            return '/thumbnail/' + r.raw.TokenImageID + '/200x200';
                         }
                     }
                 ],

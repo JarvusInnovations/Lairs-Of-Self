@@ -2,7 +2,8 @@ Ext.define('LairsOfSelf.controller.Main', {
     extend: 'Ext.app.Controller',
     requires: [
         'Ext.MessageBox',
-        'Ext.Ajax'
+        'Ext.Ajax',
+        'LairsOfSelf.widget.Submission'
     ],
 
     config: {
@@ -25,7 +26,15 @@ Ext.define('LairsOfSelf.controller.Main', {
             },
             passwordField: 'mainview textfield',
             agreeField: 'mainview checkboxfield',
-            successMessage: 'mainview #successMessage',
+            
+            submissionViewer: {
+                selector: 'submissionviewer',
+                autoCreate: true,
+
+                docked: 'top',
+                xtype: 'submissionviewer',
+                hidden: true
+            },
 
             chooseMaskView: {
                 selector: 'choosemaskview',
@@ -33,15 +42,18 @@ Ext.define('LairsOfSelf.controller.Main', {
 
                 xtype: 'choosemaskview'
             },
-            submissionViewer: 'choosemaskview #submissionViewer'
+            fishView: 'choosemaskview fishview'
         },
 
         control: {
             'mainview button[action=proceed]': {
                 tap: 'onMainProceedTap'
             },
-            chooseMaskView: {
-                activate: 'onChooseMaskActivate'
+//            chooseMaskView: {
+//                activate: 'onChooseMaskActivate'
+//            },
+            fishView: {
+                selectionchange: 'onChooseMaskSelectionChange'
             },
             'choosemaskview button[action=back]': {
                 tap: 'onChooseMaskBackTap'
@@ -52,63 +64,113 @@ Ext.define('LairsOfSelf.controller.Main', {
         }
     },
 
+
+    // controller template methods
     launch: function() {
-        Ext.Viewport.add(this.getMainView());
+        var me = this,
+            mainView = me.getMainView(),
+            passwordField = me.getPasswordField(),
+            password;
+            
+        try {
+            password = localStorage.getItem('lairs-password');
+        } catch (error) {
+            password = null;
+        }
+
+        if (password) {
+            passwordField.setValue(password);
+        }
+
+        mainView.setShowPasswordField(!password);
+        Ext.Viewport.add(mainView);
+        Ext.Viewport.add(me.getSubmissionViewer());
     },
 
+
+    // config handlers
+    updateSubmission: function(submission) {
+        var submissionViewer = this.getSubmissionViewer();
+
+        if (submission) {
+            submissionViewer.setData(submission);
+            submissionViewer.show();
+        } else {
+            submissionViewer.hide();
+        }
+    },
+
+
+    // event handlers
     onMainProceedTap: function() {
         var me = this,
+            mainView = me.getMainView(),
             passwordField = me.getPasswordField(),
-            password = passwordField.getValue(),
-            agreeField = me.getAgreeField(),
-            successMessage = me.getSuccessMessage();
-
-        if (!successMessage.getHidden()) {
-            Ext.Viewport.setActiveItem(me.getChooseMaskView());
-            return;
-        }
+            password = passwordField.getValue();
 
         if (!password) {
-            Ext.Msg.alert('Cannot proceed', 'Without entering a password, you cannot continue');
-            return;
-        }
-
-        if (!agreeField.getChecked()) {
-            Ext.Msg.alert('Cannot proceed', 'Without agreeing to the term, you cannot continue');
+            Ext.Msg.alert('Please try again', 'Word not found.');
+            mainView.setShowPasswordField(true);
             return;
         }
 
         Ext.Ajax.request({
+            method: 'GET',
             url: '/submissions/by-password/' + password,
             headers: {
                 Accept: 'application/json'
             },
+            params: {
+                include: 'Mask'
+            },
             success: function(response) {
-                var r = Ext.decode(response.responseText);
+                var r = Ext.decode(response.responseText),
+                    chooseMaskView, fishView;
 
                 if (r.success && r.data) {
+                    mainView.setShowPasswordField(false);
                     me.setSubmission(r.data);
-                    passwordField.hide();
-                    agreeField.hide();
-                    successMessage.show();
+
+                    try {
+                        localStorage.setItem('lairs-password', password);
+                    } catch (error) {
+                        // fail silently, they'll just have to input their password again next time
+                    }
+
+                    chooseMaskView = me.getChooseMaskView();
+                    fishView = me.getFishView();
+                    fishView.select(fishView.getStore().getById(r.data.MaskID));
+                    Ext.Viewport.setActiveItem(chooseMaskView);
                 } else {
-                    Ext.Msg.alert('Cannot proceed', 'Something went wrong&hellip; try again in a few minutes');
+                    Ext.Msg.alert('Please try again', 'Something went wrong&hellip; try again in a few minutes');
                 }
             },
             failure: function(response) {
                 if (response.status == 404) {
-                    Ext.Msg.alert('Cannot proceed', 'We cannot find the password you entered');
+                    Ext.Msg.alert('Please try again', 'Word not found.');
                 } else {
-                    Ext.Msg.alert('Cannot proceed', 'Something went wrong&hellip; try again in a few minutes');
+                    Ext.Msg.alert('Please try again', 'Something went wrong&hellip; try again in a few minutes');
                 }
             }
         });
     },
 
-    onChooseMaskActivate: function() {
-        this.getSubmissionViewer().setData({
-            photoUrl: '/thumbnail/' + this.getSubmission().PhotoID + '/200x200'
-        });
+//    onChooseMaskActivate: function() {
+//        this.getSubmissionViewer().setData({
+//            photoUrl: '/thumbnail/' + this.getSubmission().PhotoID + '/200x200'
+//        });
+//    },
+
+    onChooseMaskSelectionChange: function(fishView, records) {
+        var me = this,
+            record = records[0];
+
+        if (record) {
+            me.getSubmissionViewer().setData(Ext.applyIf({
+                MaskID: record.getId(),
+                Mask: record.raw
+            }, me.getSubmission()));
+        }
     },
 
     onChooseMaskBackTap: function() {

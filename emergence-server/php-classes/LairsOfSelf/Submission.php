@@ -46,7 +46,7 @@ class Submission extends \ActiveRecord
     public function save($deep = true)
     {
         if (!$this->Password) {
-            $this->Password = Password::getByWhere('SubmissionID IS NULL');
+            $this->Password = Password::getByWhere('SubmissionID IS NULL', ['order' => 'RAND()']);
             
             if (!$this->Password) {
                 $this->Password = Password::create([], true);
