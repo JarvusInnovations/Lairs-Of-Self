@@ -1,0 +1,3 @@
+<?php
+
+LairsOfSelf\SubmissionsRequestHandler::handleRequest();
