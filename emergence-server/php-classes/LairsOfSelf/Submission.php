@@ -37,6 +37,12 @@ class Submission extends \ActiveRecord
         'Mask' => 'require-relationship'
     ];
 
+    public static $dynamicFields = [
+        'Photo',
+        'Mask',
+        'Password'
+    ];
+
     public function save($deep = true)
     {
         if (!$this->Password) {
