@@ -32,15 +32,6 @@ var app = require('http').createServer(function (req, res) {
         });
 
         busboy.on('finish', function() {
-            res.writeHead(200, {
-                'Connection': 'close',
-                'Content-Type': 'application/json'
-            });
-
-            res.end(JSON.stringify({
-                success: true,
-                password: 'Spill'
-            }));
 
             // TODO: post station+mask signal to MIDI
             console.log('\tsent submission signal over MIDI');
@@ -48,12 +39,36 @@ var app = require('http').createServer(function (req, res) {
             // TODO: post submission to emergence-server
             postForm.submit({
                 host: 'lairs-of-self.sandbox01.jarv.us',
-                path: '/submissions',
+                path: '/submissions?include=Password',
                 headers: {
                     'Accept': 'application/json'
                 }
             }, function(postError, postResponse) {
-                console.log('\tposted submission to emergence-server and got status code ' + postResponse.statusCode);
+                if (postError) {
+                    console.log('\tfailed to post submission to emergence-server: ' + util.inspect(postError));
+                    return;
+                }
+
+                var body = '';
+                postResponse.on('data', function(chunk) {
+                    body += chunk;
+                });
+
+                postResponse.on('end', function() {
+                    console.log('\tposted submission to emergence-server and got status code ' + postResponse.statusCode);
+
+                    body = JSON.parse(body);
+
+                    res.writeHead(200, {
+                        'Connection': 'close',
+                        'Content-Type': 'application/json'
+                    });
+
+                    res.end(JSON.stringify({
+                        success: true,
+                        password: body.data.Password.Password
+                    }));
+                });
             });
         });
 
