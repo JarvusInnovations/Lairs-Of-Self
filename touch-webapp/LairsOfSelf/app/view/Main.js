@@ -7,6 +7,8 @@ Ext.define('LairsOfSelf.view.Main', {
     ],
 
     config: {
+        showPasswordField: true,
+
         cls: 'lairs-view-main',
 
         scrollable: 'vertical',
@@ -28,15 +30,9 @@ Ext.define('LairsOfSelf.view.Main', {
             ,value: 'e990'
             // </debug>
         },{
-            xtype: 'checkboxfield',
-            label: 'I agree to the terms of use',
-            labelAlign: 'right',
-            labelWidth: 210
-        },{
             xtype: 'component',
-            itemId: 'successMessage',
-            html: 'See, change and share what you are wearing.',
-            hidden: true
+            itemId: 'alreadyLoggedIn',
+            html: 'See, change and share what you are wearing.'
         },{
             xtype: 'button',
             action: 'proceed',
@@ -65,5 +61,10 @@ Ext.define('LairsOfSelf.view.Main', {
                 }]
             }
         }]
+    },
+    
+    updateShowPasswordField: function(showPasswordField) {
+        this.down('textfield').setHidden(!showPasswordField);
+        this.down('#alreadyLoggedIn').setHidden(showPasswordField);
     }
 });
