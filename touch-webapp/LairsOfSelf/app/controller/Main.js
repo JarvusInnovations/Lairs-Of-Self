@@ -46,6 +46,9 @@ Ext.define('LairsOfSelf.controller.Main', {
         },
 
         control: {
+            mainView: {
+                activate: 'onMainViewActivate'
+            },
             'mainview button[action=proceed]': {
                 tap: 'onMainProceedTap'
             },
@@ -102,6 +105,10 @@ Ext.define('LairsOfSelf.controller.Main', {
 
 
     // event handlers
+    onMainViewActivate: function() {
+        this.getSubmissionViewer().hide();
+    },
+
     onMainProceedTap: function() {
         var me = this,
             mainView = me.getMainView(),
@@ -174,7 +181,7 @@ Ext.define('LairsOfSelf.controller.Main', {
     },
 
     onChooseMaskBackTap: function() {
-        Ext.Viewport.animateActiveItem(this.getMainView(), {type: 'slide', direction: 'up'});
+        Ext.Viewport.animateActiveItem(this.getMainView(), {type: 'slide', direction: 'right'});
     },
 
     onChooseMaskProceedTap: function() {

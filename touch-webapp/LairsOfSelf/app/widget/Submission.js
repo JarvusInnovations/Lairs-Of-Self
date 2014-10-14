@@ -4,6 +4,11 @@ Ext.define('LairsOfSelf.widget.Submission', {
 
     config: {
         cls: 'lairs-widget-submission',
+        
+        showAnimation: {
+            type: 'slide',
+            direction: 'down'
+        },
 
         tpl: [
             '<div class="submission-composition">',
