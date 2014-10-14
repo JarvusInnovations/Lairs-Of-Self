@@ -270,6 +270,7 @@
                                 </state>
                                 <connections>
                                     <action selector="proceedButtonClicked:" destination="T1e-1F-XmW" eventType="touchUpInside" id="k7r-3B-445"/>
+                                    <segue destination="kPV-Vb-GE1" kind="custom" identifier="enterInstallmentScreen" customClass="ModalFromRightToLeft" id="Oua-wT-A0V"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-up" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-bq-LXH">
@@ -294,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1896" y="76"/>
+            <point key="canvasLocation" x="1870" y="76"/>
         </scene>
         <!--Sharing View Controller-->
         <scene sceneID="f7p-b6-Cwn">
@@ -348,8 +349,8 @@
         <image name="triangle-up" width="708" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l17-E0-ZPd"/>
-        <segue reference="6uM-KI-Xon"/>
+        <segue reference="1hB-ry-2Xg"/>
+        <segue reference="Oua-wT-A0V"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

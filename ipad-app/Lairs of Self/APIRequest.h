@@ -15,8 +15,7 @@
 @property (nonatomic, strong) NSURL *maskURL;
 @property (nonatomic, strong) NSURL *omitUrl;
 
--(void)makeAPIRequest;
--(void)makeAPIRequestWithMask:(NSInteger)index andUserImage:(UIImage *)image;
+-(BOOL)makeAPIRequestWithMask:(NSInteger)index andUserImage:(UIImage *)image;
 -(void)sendOmitRequest;
 
 @end
