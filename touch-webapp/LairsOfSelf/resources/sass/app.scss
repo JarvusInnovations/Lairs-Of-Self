@@ -10,10 +10,152 @@
 // @include icon('user');
 $fishview-item-size: 200px;
 
+body {
+    font-size: 120%;
+    font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+}
+
+.logo {
+    margin: 1em 0 0;
+}
+
+.display-text {
+    margin: 1em;
+    text-align: center;
+    width: 66.6667%;
+}
 
 .fishview-image {
     width: $fishview-item-size;
     height: $fishview-item-size;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.x-field {
+    margin: 1em 0;
+}
+
+.x-form-label {
+    margin-bottom: .25em;
+    text-align: center;
+    
+    span {
+        font-weight: inherit;
+    }
+}
+
+.x-input-el {
+    background: black;
+    border: none;
+    color: white;
+    padding: 1em;
+}
+
+.twitter-gallery {
+    border-top: .5em solid black;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.gallery-title {
+    margin: 0 0 1em;
+}
+
+.gallery-items {
+    margin: 0 0 0 -1em;
+    padding: 0;
+}
+
+.gallery-item {
+    box-sizing: border-box;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1em 1em;
+    width: 33.3333%;
+}
+
+.gallery-image {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.x-button {
+    $center-offset: 12px;
+
+    background: none;
+    border: none;
+    height: 74px;
+    @include transition(150ms);
+    width: 107px;
+
+    &.x-button-normal {
+        background-image: url('../images/btn-right.svg');
+        color: white;
+        padding-right: $center-offset;
+    }
+
+    &.x-button-left {
+        background-image: url('../images/btn-left.svg');
+        color: white;
+        padding-left: $center-offset;
+    }
+
+    &.x-button-left-white {
+        background-image: url('../images/btn-left-white.svg');
+        padding-left: $center-offset;
+    }
+
+    &.x-button-normal-white {
+        background-image: url('../images/btn-right-white.svg');
+        padding-right: $center-offset;
+    }
+
+    &.x-button-pressing,
+    &.x-button-pressed {
+        opacity: .5;
+        @include transition(none);
+    }
+}
+
+.x-toolbar.x-toolbar-dark {
+    background: none;
+    padding: 1em;
+
+    .x-button + .x-button {
+        margin-left: 2em;
+    }
+}
+
+.lairs-widget-submission {
+    background: url('../images/top-shade.svg') no-repeat center bottom;
+    background-size: cover;
+    height: 200px;
+    position: relative;
+}
+
+.submission-composition {
+    margin: .5em auto 1em;
+    padding-top: 53.62%;
+    position: relative;
+    width: 50%;
+    
+    -webkit-mask: url('../images/black-matte.svg') no-repeat center;
+    -webkit-mask-size: contain;
+}
+
+.submission-photo,
+.submission-mask-overlay {
+    display: block;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }

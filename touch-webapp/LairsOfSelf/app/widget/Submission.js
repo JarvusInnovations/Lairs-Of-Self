@@ -6,8 +6,10 @@ Ext.define('LairsOfSelf.widget.Submission', {
         cls: 'lairs-widget-submission',
 
         tpl: [
-            '<img src="/thumbnail/{PhotoID}/200x200">',
-            '<img src="/thumbnail/{Mask.OverlayID}/200x200">'
+            '<div class="submission-composition">',
+                '<img class="submission-photo" src="/thumbnail/{PhotoID}/200x200">',
+                '<img class="submission-mask-overlay" src="/thumbnail/{Mask.OverlayID}/200x200">',
+            '</div>'
         ]
     }
 });

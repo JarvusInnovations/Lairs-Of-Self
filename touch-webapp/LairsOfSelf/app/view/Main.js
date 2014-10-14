@@ -18,19 +18,22 @@ Ext.define('LairsOfSelf.view.Main', {
         },
         items: [{
             xtype: 'image',
-            src: 'http://www.placecage.com/c/200/200',
-            width: 200,
-            height: 200
+            cls: 'logo',
+            src: 'resources/images/los-logo.svg',
+            width: '100%',
+            height: 100
         },{
             xtype: 'textfield',
             label: 'What do you remember?',
-            labelAlign: 'top'
+            labelAlign: 'top',
+            clearIcon: false
 
             // <debug>
             ,value: 'that'
             // </debug>
         },{
             xtype: 'component',
+            cls: 'display-text',
             itemId: 'alreadyLoggedIn',
             html: 'See, change and share what you are wearing.'
         },{
@@ -39,25 +42,30 @@ Ext.define('LairsOfSelf.view.Main', {
             text: 'Proceed'
         },{
             xtype: 'component',
+            cls: 'twitter-gallery',
             tpl: [
-                '<h1>@lairsofself on Twitter</h1>',
-                '<tpl for="tweets">',
-                    '<img src="{thumbUrl}">',
-                '</tpl>'
+                '<h1 class="gallery-title">@lairsofself on Twitter</h1>',
+                '<ul class="gallery-items">',
+                    '<tpl for="tweets">',
+                        '<li class="gallery-item">',
+                            '<img class="gallery-image" src="{thumbUrl}">',
+                        '</li>',
+                    '</tpl>',
+                '</ul>'
             ],
             data: {
                 tweets: [{
-                    thumbUrl: 'http://www.placecage.com/c/100/100'
+                    thumbUrl: 'http://www.placecage.com/200/200'
                 },{
-                    thumbUrl: 'http://www.placecage.com/c/100/100'
+                    thumbUrl: 'http://www.fillmurray.com/200/200'
                 },{
-                    thumbUrl: 'http://www.placecage.com/c/100/100'
+                    thumbUrl: 'http://www.nicenicejpg.com/200/200'
                 },{
-                    thumbUrl: 'http://www.placecage.com/c/100/100'
+                    thumbUrl: 'http://www.placebear.com/200/200'
                 },{
-                    thumbUrl: 'http://www.placecage.com/c/100/100'
+                    thumbUrl: 'http://www.baconmockup.com/200/200'
                 },{
-                    thumbUrl: 'http://www.placecage.com/c/100/100'
+                    thumbUrl: 'http://www.stevensegallery.com/200/200'
                 }]
             }
         }]

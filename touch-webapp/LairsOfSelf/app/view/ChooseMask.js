@@ -7,11 +7,13 @@ Ext.define('LairsOfSelf.view.ChooseMask', {
 
     config: {
         cls: 'lairs-view-choosemask',
-
+        
+        layout: 'vbox',
         items: [{
             xtype: 'fishview',
             itemSize: 200,
-            height: 200,
+            // height: 200,
+            flex: 1,
             store: {
                 fields: [
                     {
@@ -29,8 +31,12 @@ Ext.define('LairsOfSelf.view.ChooseMask', {
             }
         },{
             xtype: 'toolbar',
+            layout: {
+                pack: 'center',
+            },
             items: [{
                 xtype: 'button',
+                ui: 'left',
                 action: 'back',
                 text: 'Back'
             },{
