@@ -16,8 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *responseWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_word"];
+
+    NSString *responseWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    NSLog(@"Response Word %@", responseWord);
     if (responseWord) {
         _wordLabel.text = responseWord;
     }

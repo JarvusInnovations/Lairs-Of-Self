@@ -24,6 +24,12 @@
 }
 
 -(BOOL)makeAPIRequestWithMask:(NSInteger)index andUserImage:(UIImage*)image {
+    
+    
+    UIImage *finalImage = [UIImage imageWithCGImage:image.CGImage
+                                     scale:image.scale
+                               orientation:UIImageOrientationRight];
+    
     index++;
     
     NSLog(@"Make API with Mask %ld : %@", (long)index, image);
@@ -49,7 +55,7 @@
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", [NSString stringWithFormat:@"mask"]] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"%ld\r\n", (long)index] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    NSData *imageData = UIImageJPEGRepresentation(finalImage, 1.0);
     if (image) {
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\n", FileParamConstant] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -66,15 +72,17 @@
     
     NSURLResponse *response;
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-
+    
     if (!err) {
         NSDictionary *res = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&dictErr];
-        if (!dictErr && [res[@"success"]  isEqual: @"1"]) {
+
+        if (!dictErr && [[res objectForKey:@"success"]boolValue] == YES) {
             
             NSLog(@"Response: %@", res[@"password"]);
             NSLog(@"Success: %@", res[@"success"]);
             
             [[NSUserDefaults standardUserDefaults] setObject:res[@"password"] forKey:@"user_word"];
+            NSLog(@"return true");
             return true;
         }
     }

@@ -66,10 +66,10 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *unflippedImage = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
     _userImage = [UIImage imageWithCGImage:unflippedImage.CGImage
                                          scale:unflippedImage.scale
                                    orientation:UIImageOrientationLeftMirrored];
-    
     
     self.cameraView.image = _userImage;
     [_picker dismissViewControllerAnimated:NO completion:nil];

@@ -262,6 +262,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-up" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-bq-LXH">
+                                <rect key="frame" x="222" y="911" width="325" height="113"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-down_360" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-KS-dB7">
+                                <rect key="frame" x="222" y="0.0" width="325" height="113"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Sy-2mY">
                                 <rect key="frame" x="309" y="765" width="150" height="103"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
@@ -270,15 +276,8 @@
                                 </state>
                                 <connections>
                                     <action selector="proceedButtonClicked:" destination="T1e-1F-XmW" eventType="touchUpInside" id="k7r-3B-445"/>
-                                    <segue destination="kPV-Vb-GE1" kind="custom" identifier="enterInstallmentScreen" customClass="ModalFromRightToLeft" id="Oua-wT-A0V"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-up" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-bq-LXH">
-                                <rect key="frame" x="222" y="911" width="325" height="113"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle-down_360" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-KS-dB7">
-                                <rect key="frame" x="222" y="0.0" width="325" height="113"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -290,12 +289,12 @@
                     <connections>
                         <outlet property="carousel" destination="oL3-k3-kew" id="oOd-Rq-I3f"/>
                         <outlet property="proceedButton" destination="DU6-Sy-2mY" id="yTO-cS-NCe"/>
-                        <segue destination="Q5K-Ii-O0B" kind="custom" identifier="showWordToRemember" customClass="ModalFromRightToLeft" id="taB-jL-8KF"/>
+                        <segue destination="Q5K-Ii-O0B" kind="custom" identifier="sharing" customClass="ModalFromRightToLeft" id="Eub-NK-tGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="76"/>
+            <point key="canvasLocation" x="2118" y="81"/>
         </scene>
         <!--Sharing View Controller-->
         <scene sceneID="f7p-b6-Cwn">
@@ -325,6 +324,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zDZ-IA-dVO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="wordLabel" destination="JLG-9g-nPi" id="ebi-sI-Fvz"/>
@@ -333,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWI-SE-E8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2803" y="76"/>
+            <point key="canvasLocation" x="2970" y="76"/>
         </scene>
     </scenes>
     <resources>
@@ -350,7 +350,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1hB-ry-2Xg"/>
-        <segue reference="Oua-wT-A0V"/>
+        <segue reference="l17-E0-ZPd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

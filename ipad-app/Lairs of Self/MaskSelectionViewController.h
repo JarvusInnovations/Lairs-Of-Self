@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 #import "APIRequest.h"
+#import "SharingViewController.h"
+#import "EnterInstallationViewController.h"
 
-@interface MaskSelectionViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+@interface MaskSelectionViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UIButton *proceedButton;

@@ -16,7 +16,6 @@
 		2F6FF8A219DEC112000EA569 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8A119DEC112000EA569 /* AppDelegate.m */; };
 		2F6FF8A519DEC112000EA569 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8A419DEC112000EA569 /* ViewController.m */; };
 		2F6FF8A819DEC112000EA569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6FF8A619DEC112000EA569 /* Main.storyboard */; };
-		2F6FF8AA19DEC112000EA569 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6FF8A919DEC112000EA569 /* Images.xcassets */; };
 		2F6FF8AD19DEC112000EA569 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6FF8AB19DEC112000EA569 /* LaunchScreen.xib */; };
 		2F6FF8B919DEC112000EA569 /* Lairs_of_SelfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8B819DEC112000EA569 /* Lairs_of_SelfTests.m */; };
 		2F6FF8C419DEC376000EA569 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8C319DEC376000EA569 /* CameraViewController.m */; };
@@ -24,6 +23,7 @@
 		2F6FF8CC19DECB23000EA569 /* MaskSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8CB19DECB23000EA569 /* MaskSelectionViewController.m */; };
 		2F6FF8CF19DEFF3A000EA569 /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */; };
 		2FA3A9E419E09A6C00D0515C /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA3A9E319E09A6C00D0515C /* APIRequest.m */; };
+		2FFC023219EDCE2200BD92C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFC023119EDCE2200BD92C5 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,8 @@
 		2F6FF8A319DEC112000EA569 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2F6FF8A419DEC112000EA569 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2F6FF8A719DEC112000EA569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2F6FF8A919DEC112000EA569 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images.xcassets; sourceTree = "<group>"; };
 		2F6FF8AC19DEC112000EA569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2F6FF8B219DEC112000EA569 /* Lairs of SelfTests */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = "Lairs of SelfTests"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6FF8B219DEC112000EA569 /* Lairs of SelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lairs of SelfTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F6FF8B719DEC112000EA569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6FF8B819DEC112000EA569 /* Lairs_of_SelfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lairs_of_SelfTests.m; sourceTree = "<group>"; };
 		2F6FF8C219DEC376000EA569 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		2F6FF8CE19DEFF3A000EA569 /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayView.m; sourceTree = "<group>"; };
 		2FA3A9E219E09A6C00D0515C /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
 		2FA3A9E319E09A6C00D0515C /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		2FFC023119EDCE2200BD92C5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2F6FF89919DEC112000EA569 /* Lairs of Self.app */,
-				2F6FF8B219DEC112000EA569 /* Lairs of SelfTests */,
+				2F6FF8B219DEC112000EA569 /* Lairs of SelfTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +116,7 @@
 				2F6FF8A619DEC112000EA569 /* Main.storyboard */,
 				2F6551B319E1D5AD007FE76C /* Settings.bundle */,
 				2FA3A9E819E0A43C00D0515C /* Segues */,
-				2F6FF8A919DEC112000EA569 /* Images.xcassets */,
+				2FFC023119EDCE2200BD92C5 /* Images.xcassets */,
 				2F6FF8AB19DEC112000EA569 /* LaunchScreen.xib */,
 				2F6FF89C19DEC112000EA569 /* Supporting Files */,
 			);
@@ -234,7 +234,7 @@
 			);
 			name = "Lairs of SelfTests";
 			productName = "Lairs of SelfTests";
-			productReference = 2F6FF8B219DEC112000EA569 /* Lairs of SelfTests */;
+			productReference = 2F6FF8B219DEC112000EA569 /* Lairs of SelfTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -281,9 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6551B419E1D5AD007FE76C /* Settings.bundle in Resources */,
+				2FFC023219EDCE2200BD92C5 /* Images.xcassets in Resources */,
 				2F6FF8A819DEC112000EA569 /* Main.storyboard in Resources */,
 				2F6FF8AD19DEC112000EA569 /* LaunchScreen.xib in Resources */,
-				2F6FF8AA19DEC112000EA569 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

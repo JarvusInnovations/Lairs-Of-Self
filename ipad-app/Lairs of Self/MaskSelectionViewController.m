@@ -83,10 +83,16 @@
     NSLog(@"Selected image with index: %li",(long)index);
     NSLog(@"Selected image with index: %@",image);
     
-    if (apiResponse) {
-        [self performSegueWithIdentifier:@"showWordToRemember" sender:self];
+    if (apiResponse == YES) {
+        NSLog(@"going to show word to remember");
+[self performSegueWithIdentifier:@"sharing" sender:self];
+//        [self dismissViewControllerAnimated:YES completion:^() {
+//            [self performSegueWithIdentifier:@"showSharing" sender:self];
+//        }];
+        
     } else {
-        [self performSegueWithIdentifier:@"enterInstallmentScreen" sender:self];
+        NSLog(@"going to enter installment screen");
+        //[self performSegueWithIdentifier:@"enterInstallment" sender:self];
     }
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EnterInstallationViewController.h"
 
-@interface SharingViewController : UIViewController
+@interface SharingViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *wordLabel;
 
