@@ -55,9 +55,20 @@ var app = require('http').createServer(function (req, res) {
                 });
 
                 postResponse.on('end', function() {
+                    var bodyParsed;
+
                     console.log('\tposted submission to emergence-server and got status code ' + postResponse.statusCode);
 
-                    body = JSON.parse(body);
+                    try {
+                        bodyParsed = JSON.parse(body);
+                    } catch(err) {
+                        console.log('\tfailed to parse emergence-server response:\n' + body);
+                        res.writeHead(500);
+                        res.end(JSON.stringify({
+                            success: false
+                        }));
+                        return;
+                    }
 
                     res.writeHead(200, {
                         'Connection': 'close',
@@ -65,8 +76,8 @@ var app = require('http').createServer(function (req, res) {
                     });
 
                     res.end(JSON.stringify({
-                        success: true,
-                        password: body.data.Password.Password
+                        success: bodyParsed.success,
+                        password: bodyParsed.data.Password.Password
                     }));
                 });
             });
