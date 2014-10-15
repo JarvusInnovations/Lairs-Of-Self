@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    NSLog(@"Share Screen view did laod");
+    
     NSString *responseWord = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     NSLog(@"Response Word %@", responseWord);
     if (responseWord) {

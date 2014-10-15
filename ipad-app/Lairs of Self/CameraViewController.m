@@ -26,9 +26,11 @@
     if (self.cameraView.image == nil) {
         _retakeButton.hidden = true;
         _proceedButton.hidden = true;
+        _proceedLabel.hidden = true;
     } else {
         _retakeButton.hidden = false;
         _proceedButton.hidden = false;
+        _proceedLabel.hidden = false;
     }
 }
 
@@ -58,8 +60,10 @@
     } else {
         [self.view bringSubviewToFront:_retakeButton];
         [self.view bringSubviewToFront:_proceedButton];
+        [self.view bringSubviewToFront:_proceedLabel];
         _retakeButton.hidden = false;
         _proceedButton.hidden = false;
+        _proceedLabel.hidden = false;
         _maskImage.hidden = false;
     }
 }

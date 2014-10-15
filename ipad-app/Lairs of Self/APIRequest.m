@@ -81,7 +81,7 @@
             NSLog(@"Response: %@", res[@"password"]);
             NSLog(@"Success: %@", res[@"success"]);
             
-            [[NSUserDefaults standardUserDefaults] setObject:res[@"password"] forKey:@"user_word"];
+            [[NSUserDefaults standardUserDefaults] setObject:res[@"password"] forKey:@"password"];
             NSLog(@"return true");
             return true;
         }

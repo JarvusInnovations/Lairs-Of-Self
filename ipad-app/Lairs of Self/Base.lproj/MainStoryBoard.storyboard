@@ -96,12 +96,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="aJG-25-kcS">
-                                <rect key="frame" x="92" y="467" width="575" height="289"/>
+                                <rect key="frame" x="92" y="412" width="575" height="289"/>
                                 <attributedString key="attributedText">
                                     <fragment content="You will not be able to interact with the installation. Are you sure you want to omit?">
                                         <attributes>
                                             <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <font key="NSFont" size="42" name="HelveticaNeue-UltraLight"/>
+                                            <font key="NSFont" size="25" name="HelveticaNeue-UltraLight"/>
+                                            <font key="NSOriginalFont" size="25" name="HelveticaNeue-UltraLight"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
                                         </attributes>
                                     </fragment>
@@ -141,7 +142,7 @@
                         <outlet property="proceedButton" destination="mP6-BT-aa8" id="5lT-vn-gHa"/>
                         <outlet property="termsContent" destination="0uu-6J-V6R" id="UD0-le-m6a"/>
                         <outlet property="termsOfUseButton" destination="SMz-bA-pFl" id="zHk-Gu-pBq"/>
-                        <segue destination="kPV-Vb-GE1" kind="show" identifier="enterInstallation" id="aFS-Le-m2s"/>
+                        <segue destination="kPV-Vb-GE1" kind="presentation" identifier="enterInstallation" modalTransitionStyle="crossDissolve" id="aFS-Le-m2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -194,6 +195,12 @@
                                     <action selector="proceedWithPicture:" destination="zSn-So-pd3" eventType="touchUpInside" id="uHE-ON-XiX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Proceed or Retake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSS-mU-Amr">
+                                <rect key="frame" x="236" y="72" width="297" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -202,6 +209,7 @@
                         <outlet property="cameraView" destination="MqL-rd-orV" id="Lgu-UZ-z1M"/>
                         <outlet property="maskImage" destination="WAq-m9-Drg" id="2VH-CP-VIC"/>
                         <outlet property="proceedButton" destination="mdb-f9-5NB" id="FWm-pe-13n"/>
+                        <outlet property="proceedLabel" destination="bSS-mU-Amr" id="3Zb-Zx-llB"/>
                         <outlet property="retakeButton" destination="Uvl-7n-Z6b" id="mpq-jr-W3N"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="goToHome" customClass="ModalFromLeftToRight" id="6uM-KI-Xon"/>
                         <segue destination="T1e-1F-XmW" kind="custom" identifier="selectMask" customClass="ModalFromRightToLeft" id="0HO-i9-DjK"/>
@@ -209,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-hT-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="76"/>
+            <point key="canvasLocation" x="808" y="68.5"/>
         </scene>
         <!--Enter Installation View Controller-->
         <scene sceneID="SNZ-G2-Zcq">
@@ -224,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="l7J-iH-gUe">
-                                <rect key="frame" x="234" y="196" width="300" height="300"/>
+                                <rect key="frame" x="234" y="225" width="300" height="280"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You may enter the installation." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="451" translatesAutoresizingMaskIntoConstraints="NO" id="N4b-t2-QsY">
                                 <rect key="frame" x="159" y="504" width="451" height="101"/>
@@ -237,7 +245,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="restart" customClass="ModalFromRightToLeft" id="1hB-ry-2Xg"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="restart" modalTransitionStyle="crossDissolve" id="1hB-ry-2Xg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaV-nx-Trx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,6 +343,23 @@
             </objects>
             <point key="canvasLocation" x="2838" y="76"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="lMY-If-G8l">
+            <objects>
+                <viewController id="Yhg-5w-jE2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RmE-XW-xfl"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZeC-pV-YJR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jwh-w4-8E3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lg7-xs-Sde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="00LOSMaskOverlays_BlackMask" width="1536" height="1670"/>
@@ -349,8 +374,8 @@
         <image name="triangle-up" width="708" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1hB-ry-2Xg"/>
-        <segue reference="l17-E0-ZPd"/>
+        <segue reference="6uM-KI-Xon"/>
+        <segue reference="aFS-Le-m2s"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

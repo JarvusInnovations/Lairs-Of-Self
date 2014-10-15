@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *proceedButton;
 @property (strong, nonatomic) IBOutlet UIButton *retakeButton;
 @property (strong, nonatomic) IBOutlet UIImage *userImage;
+@property (strong, nonatomic) IBOutlet UILabel *proceedLabel;
 
 - (IBAction)retakePicture:(id)sender;
 - (IBAction)proceedWithPicture:(id)sender;
