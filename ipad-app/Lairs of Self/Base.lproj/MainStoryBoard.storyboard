@@ -20,7 +20,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-2P-SI1">
                                 <rect key="frame" x="213" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="No" backgroundImage="LOSButtonLeft">
+                                <state key="normal" backgroundImage="Button_Black_No">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -40,7 +40,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-ov-Tpd">
                                 <rect key="frame" x="317" y="752" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Close" backgroundImage="LOSButtonLeft">
+                                <state key="normal" backgroundImage="Button_Black_Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -61,7 +61,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP6-BT-aa8">
                                 <rect key="frame" x="430" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Yes" backgroundImage="LOSButtonRight">
+                                <state key="normal" backgroundImage="Button_Black_Yes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -71,7 +71,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-10-i6E">
                                 <rect key="frame" x="430" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="I'm Sure" backgroundImage="LOSButtonRight">
+                                <state key="normal" backgroundImage="Button_Black_ImSure">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -176,7 +176,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvl-7n-Z6b">
                                 <rect key="frame" x="213" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Retake" backgroundImage="LOSButtonLeftWhite">
+                                <state key="normal" backgroundImage="Button_White_Retake">
                                     <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -187,7 +187,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-f9-5NB">
                                 <rect key="frame" x="430" y="878" width="125" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRightWhite">
+                                <state key="normal" backgroundImage="Button_White_Proceed">
                                     <color key="titleColor" red="0.070588235289999995" green="0.12941176469999999" blue="0.20392156859999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -279,7 +279,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Sy-2mY">
                                 <rect key="frame" x="309" y="765" width="150" height="103"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Proceed" backgroundImage="LOSButtonRight">
+                                <state key="normal" backgroundImage="Button_Black_Proceed">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -343,30 +343,17 @@
             </objects>
             <point key="canvasLocation" x="2838" y="76"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="lMY-If-G8l">
-            <objects>
-                <viewController id="Yhg-5w-jE2" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RmE-XW-xfl"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZeC-pV-YJR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jwh-w4-8E3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lg7-xs-Sde" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="00LOSMaskOverlays_BlackMask" width="1536" height="1670"/>
+        <image name="Button_Black_Close" width="274" height="185"/>
+        <image name="Button_Black_ImSure" width="274" height="185"/>
+        <image name="Button_Black_No" width="274" height="185"/>
+        <image name="Button_Black_Proceed" width="274" height="185"/>
+        <image name="Button_Black_Yes" width="274" height="185"/>
+        <image name="Button_White_Proceed" width="274" height="185"/>
+        <image name="Button_White_Retake" width="275" height="185"/>
         <image name="LOSButtonLeft" width="274" height="189"/>
-        <image name="LOSButtonLeftWhite" width="274" height="189"/>
-        <image name="LOSButtonRight" width="274" height="189"/>
-        <image name="LOSButtonRightWhite" width="274" height="189"/>
         <image name="blackFiller" width="1257" height="300"/>
         <image name="logo" width="444" height="414"/>
         <image name="terms" width="1536" height="2048"/>

@@ -1,0 +1,80 @@
+TLairs of Self
+v7
+r1
+cCheck dependencies
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/Lairs of Self/Base.lproj/LaunchScreen.xib
+c00000000543C63300000000000000E82
+t1413243696
+s3714
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/Lairs of Self/Base.lproj/Main.storyboard
+c00000000543C63B90000000000007F16
+t1413243833
+s32534
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/Lairs of Self/Images.xcassets
+c00000000543C632F000000000000041E
+t1413243695
+s1054
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/Lairs of Self/Settings.bundle
+c00000000543C63B90000000000000088
+t1413243833
+s136
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app
+t2
+s0
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/Info.plist
+t2
+s0
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/Resources/Base.lproj/LaunchScreen.nib
+t2
+s0
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/Resources/Base.lproj/Main.storyboard
+t2
+s0
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/Resources/Images.xcassets
+t2
+s0
+
+N/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/Resources/Settings.bundle
+t2
+s0
+
+NLairs of Self/Info.plist
+c00000000543C63300000000000000457
+t1413243696
+s1111
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies434936689#434936689#0(63"[BEROR]error: There is no SDK with the name or path 'iphoneos'1(4@55"error: There is no SDK with the name or path 'iphoneos'434936689#18446744073709551615#0#0(1@0"0(0#1#0"17212083968#0"0#
+
+CCompileXIB "/Users/Tyler/Development/Lairs of Self/ipad-app/Lairs of Self/Base.lproj/LaunchScreen.xib"
+r0
+
+CCpResource "build/Debug/Lairs of Self.app/Contents/Resources/Base.lproj/Main.storyboard" "Lairs of Self/Base.lproj/Main.storyboard"
+r0
+
+CCpResource "build/Debug/Lairs of Self.app/Contents/Resources/Images.xcassets" "Lairs of Self/Images.xcassets"
+r0
+
+CCpResource "build/Debug/Lairs of Self.app/Contents/Resources/Settings.bundle" "Lairs of Self/Settings.bundle"
+r0
+
+CProcessInfoPlistFile "/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app/Contents/Info.plist" "Lairs of Self/Info.plist"
+r0
+
+CTouch "/Users/Tyler/Development/Lairs of Self/ipad-app/build/Debug/Lairs of Self.app"
+r0
+

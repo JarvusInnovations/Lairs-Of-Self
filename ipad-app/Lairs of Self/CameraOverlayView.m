@@ -113,7 +113,7 @@
             [self addSubview:eyeOverlay2];
         }
         
-        UIImage *backImage = [UIImage imageNamed:@"eyes-back-btn_360.png"];
+        UIImage *backImage = [UIImage imageNamed:@"Button_White_Back"];
         _back = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _back.frame = CGRectMake(213, 878, 125, 86);
         [_back setBackgroundImage:backImage forState:UIControlStateNormal];
@@ -126,7 +126,7 @@
         [_back addTarget:self action:@selector(backToHome:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_back];
         
-        UIImage *captureImage = [UIImage imageNamed:@"eyes-capture-btn_360.png"];
+        UIImage *captureImage = [UIImage imageNamed:@"Button_White_Capture.png"];
         _capture = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _capture.frame = CGRectMake(430, 878, 125, 86);
         [_capture setBackgroundImage:captureImage forState:UIControlStateNormal];

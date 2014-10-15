@@ -39,7 +39,7 @@
     NSLog(@"Camera View Did Appear");
     [self.view bringSubviewToFront:_maskImage];
 
-    NSLog(@"Retun to Home Value: %hhd", _returnToHome);
+    //NSLog(@"Retun to Home Value: %hhd", _returnToHome);
     
     if (_returnToHome == YES) {
         [self performSegueWithIdentifier:@"goToHome" sender:self];
