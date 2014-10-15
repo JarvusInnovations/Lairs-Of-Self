@@ -242,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaV-nx-Trx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="1650"/>
+            <point key="canvasLocation" x="1459" y="1438"/>
         </scene>
         <!--Mask Selection View Controller-->
         <scene sceneID="79b-At-alT">
@@ -276,6 +276,7 @@
                                 </state>
                                 <connections>
                                     <action selector="proceedButtonClicked:" destination="T1e-1F-XmW" eventType="touchUpInside" id="k7r-3B-445"/>
+                                    <segue destination="Q5K-Ii-O0B" kind="custom" customClass="ModalFromRightToLeft" id="nBm-xf-BXp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -289,12 +290,11 @@
                     <connections>
                         <outlet property="carousel" destination="oL3-k3-kew" id="oOd-Rq-I3f"/>
                         <outlet property="proceedButton" destination="DU6-Sy-2mY" id="yTO-cS-NCe"/>
-                        <segue destination="Q5K-Ii-O0B" kind="custom" identifier="sharing" customClass="ModalFromRightToLeft" id="Eub-NK-tGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2118" y="81"/>
+            <point key="canvasLocation" x="1924" y="76"/>
         </scene>
         <!--Sharing View Controller-->
         <scene sceneID="f7p-b6-Cwn">
@@ -328,12 +328,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="wordLabel" destination="JLG-9g-nPi" id="ebi-sI-Fvz"/>
-                        <segue destination="kPV-Vb-GE1" kind="presentation" identifier="toEnterInstallation" id="l17-E0-ZPd"/>
+                        <segue destination="kPV-Vb-GE1" kind="presentation" identifier="toEnterInstallation" modalTransitionStyle="crossDissolve" id="l17-E0-ZPd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWI-SE-E8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2970" y="76"/>
+            <point key="canvasLocation" x="2838" y="76"/>
         </scene>
     </scenes>
     <resources>

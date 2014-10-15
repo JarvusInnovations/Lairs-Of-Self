@@ -14,12 +14,14 @@
 @property (nonatomic, strong) NSMutableArray *items;
 @property float maskHeight;
 @property float maskWidth;
-
+@property (strong) SharingViewController *sharingVC;
 @end
 
 @implementation MaskSelectionViewController
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
     _maskHeight = [[standardUserDefaults objectForKey:@"maskHeight"] floatValue];
     _maskWidth = [[standardUserDefaults objectForKey:@"maskWidth"] floatValue];
@@ -54,6 +56,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    _sharingVC = [[SharingViewController alloc] init];
+
     NSLog(@"Mask View Controller Did Load");
     [_carousel bringSubviewToFront:_proceedButton];
     _carousel.type = iCarouselTypeCoverFlow2;
@@ -78,22 +83,24 @@
     UIImage* image = [UIImage imageWithData:imageData];
     
     APIRequest *request = [[APIRequest alloc] init];
-    BOOL apiResponse = [request makeAPIRequestWithMask:index andUserImage:image];
+    [request makeAPIRequestWithMask:index andUserImage:image];
     
     NSLog(@"Selected image with index: %li",(long)index);
     NSLog(@"Selected image with index: %@",image);
+
+    //[self presentViewController:_sharingVC animated:YES completion:nil];
+    //[self presentModalViewController:myNewVC animated:YES];
     
-    if (apiResponse == YES) {
-        NSLog(@"going to show word to remember");
-[self performSegueWithIdentifier:@"sharing" sender:self];
-//        [self dismissViewControllerAnimated:YES completion:^() {
-//            [self performSegueWithIdentifier:@"showSharing" sender:self];
-//        }];
-        
-    } else {
-        NSLog(@"going to enter installment screen");
-        //[self performSegueWithIdentifier:@"enterInstallment" sender:self];
-    }
+//    if (apiResponse == YES) {
+//        NSLog(@"going to show word to remember");
+////        [self dismissViewControllerAnimated:YES completion:^() {
+////            [self performSegueWithIdentifier:@"showSharing" sender:self];
+////        }];
+//        
+//    } else {
+//        NSLog(@"going to enter installment screen");
+//        //[self performSegueWithIdentifier:@"enterInstallment" sender:self];
+//    }
 }
 
 // Carousel Config

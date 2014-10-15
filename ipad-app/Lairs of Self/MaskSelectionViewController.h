@@ -12,7 +12,7 @@
 #import "SharingViewController.h"
 #import "EnterInstallationViewController.h"
 
-@interface MaskSelectionViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, UINavigationControllerDelegate>
+@interface MaskSelectionViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UIButton *proceedButton;
