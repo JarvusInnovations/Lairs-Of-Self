@@ -48,49 +48,55 @@ var app = require('http').createServer(function (req, res) {
                 // upload submission to web server
                 console.log('\tbeginning upload to web server');
 
-                fs.stat(photoPath, function(err, photoStats) {
-                    console.log('\tfile size: ' + photoStats.size);
+                setTimeout(function() { // i don't know what this timeout is needed for but without it the post seems to be incomplete occasionally
 
-                    restler.post('http://lairs-of-self.sandbox01.jarv.us/submissions?include=Password,validationErrors', {
-                        headers: {
-                            'Accept': 'application/json'
-                        },
-                        multipart: true,
-                        data: {
-                            mask: mask,
-                            photo: restler.file(photoPath, photoFilename, photoStats.size, null, 'image/jpeg')
-                        }
-                    }).on('complete', function(webResponseData, webResponse) {
-                        console.log('\tfinished uploading submission to emergence-server, status=' + webResponse.statusCode);
+                    fs.stat(photoPath, function(err, photoStats) {
+                        console.log('\tfile size: ' + photoStats.size);
 
-                        if (webResponse.statusCode != 200 || typeof webResponseData != 'object') {
-                            console.log('\tsubmission failed:\n' + util.inspect(webResponseData)+'\n\n');
-                            res.writeHead(500);
+                        restler.post('http://lairs-of-self.sandbox01.jarv.us/submissions?include=Password,validationErrors', {
+                            headers: {
+                                'Accept': 'application/json'
+                            },
+                            multipart: true,
+                            data: {
+                                mask: mask,
+                                photo: restler.file(photoPath, photoFilename, photoStats.size, null, 'image/jpeg')
+                            }
+                        }).on('complete', function(webResponseData, webResponse) {
+                            console.log('\tfinished uploading submission to emergence-server, status=' + webResponse.statusCode);
+
+                            if (webResponse.statusCode != 200 || typeof webResponseData != 'object') {
+                                console.log('\tsubmission failed:\n' + util.inspect(webResponseData)+'\n\n');
+                                res.writeHead(500);
+                                res.end(JSON.stringify({
+                                    success: false
+                                }));
+                                return;
+                            }
+
+                            console.log('\twebResponseData: ' + util.inspect(webResponseData));
+
+                            res.writeHead(200, {
+                                'Connection': 'close',
+                                'Content-Type': 'application/json'
+                            });
+
                             res.end(JSON.stringify({
-                                success: false
+                                success: webResponseData.success,
+                                password: webResponseData.data && webResponseData.data.Password && webResponseData.data.Password.Password
                             }));
-                            return;
-                        }
+                        }); // end of restler.complete handler
 
-                        console.log('\twebResponseData: ' + util.inspect(webResponseData));
+                    }); // end of fs.stat callback
 
-                        res.writeHead(200, {
-                            'Connection': 'close',
-                            'Content-Type': 'application/json'
-                        });
+                }, 500); // end of timeout
 
-                        res.end(JSON.stringify({
-                            success: webResponseData.success,
-                            password: webResponseData.data && webResponseData.data.Password && webResponseData.data.Password.Password
-                        }));
-                    });
-
-                });
-            });
+            }); // end of busboy finish handler
 
             // pipe request into busyboy
             req.pipe(busboy);
-        });
+
+        }); // end of tmpName callback
 
     // Handle omit request
     } else if (req.url == '/omit' && req.method == 'POST') {
