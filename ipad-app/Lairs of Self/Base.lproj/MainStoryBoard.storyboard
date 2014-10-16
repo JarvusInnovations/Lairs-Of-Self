@@ -284,7 +284,6 @@
                                 </state>
                                 <connections>
                                     <action selector="proceedButtonClicked:" destination="T1e-1F-XmW" eventType="touchUpInside" id="k7r-3B-445"/>
-                                    <segue destination="Q5K-Ii-O0B" kind="custom" customClass="ModalFromRightToLeft" id="nBm-xf-BXp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -298,6 +297,8 @@
                     <connections>
                         <outlet property="carousel" destination="oL3-k3-kew" id="oOd-Rq-I3f"/>
                         <outlet property="proceedButton" destination="DU6-Sy-2mY" id="yTO-cS-NCe"/>
+                        <segue destination="Q5K-Ii-O0B" kind="custom" identifier="showSharing" customClass="ModalFromRightToLeft" id="bJz-l0-Nsq"/>
+                        <segue destination="kPV-Vb-GE1" kind="presentation" identifier="skipWord" modalTransitionStyle="crossDissolve" id="bBF-Qu-qPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORo-bp-W1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +363,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6uM-KI-Xon"/>
-        <segue reference="aFS-Le-m2s"/>
+        <segue reference="bBF-Qu-qPX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
 </document>

@@ -83,7 +83,7 @@
     UIImage* image = [UIImage imageWithData:imageData];
     
     APIRequest *request = [[APIRequest alloc] init];
-    [request makeAPIRequestWithMask:index andUserImage:image];
+    BOOL apiResponse = [request makeAPIRequestWithMask:index andUserImage:image];
     
     NSLog(@"Selected image with index: %li",(long)index);
     NSLog(@"Selected image with index: %@",image);
@@ -91,16 +91,17 @@
     //[self presentViewController:_sharingVC animated:YES completion:nil];
     //[self presentModalViewController:myNewVC animated:YES];
     
-//    if (apiResponse == YES) {
-//        NSLog(@"going to show word to remember");
-////        [self dismissViewControllerAnimated:YES completion:^() {
-////            [self performSegueWithIdentifier:@"showSharing" sender:self];
-////        }];
-//        
-//    } else {
-//        NSLog(@"going to enter installment screen");
-//        //[self performSegueWithIdentifier:@"enterInstallment" sender:self];
-//    }
+    if (apiResponse == YES) {
+        NSLog(@"going to show word to remember");
+        [self performSegueWithIdentifier:@"showSharing" sender:self];
+
+//        [self dismissViewControllerAnimated:YES completion:^() {
+//        }];
+        
+    } else {
+        NSLog(@"going to enter installment screen");
+        [self performSegueWithIdentifier:@"skipWord" sender:self];
+    }
 }
 
 // Carousel Config
