@@ -6,84 +6,90 @@ var util = require('util'),
     moment = require('moment'),
     tmp = require('tmp'),
     Busboy = require('busboy'),
-    FormData = require('form-data');
+    restler = require('restler');
 
 var app = require('http').createServer(function (req, res) {
     console.log('\n' + moment().format('YYYY-MM-DD HH:mm:ss') + '\t' + req.method + ' ' + req.url);
 
     // Handle submit request
     if (req.url == '/submit' && req.method == 'POST') {
-        var busboy = new Busboy({ headers: req.headers });
-            postForm = new FormData();
+        console.log('\treceiving photo submission');
 
-        busboy.on('file', function(fieldName, file, filename, encoding, mimetype) {
-            tmp.tmpName(function(err, tempPath) {
-                file.pipe(fs.createWriteStream(tempPath));
-                console.log('\tsaved file ' + filename + ' to ' + tempPath);
+        // create temporary file to recieve photo into
+        tmp.tmpName(function(err, tempPath) {
+            console.log('\tobtained temporary file path: ' + tempPath);
 
-                postForm.append(fieldName, fs.createReadStream(tempPath));
-                console.log('\tattached file ' + fieldName + '=' + filename);
+            // use busyboy to parse incoming form and populate formData
+            var busboy = new Busboy({ headers: req.headers }),
+                photoFilename, photoPath, mask;
+
+            // setup busyboy events
+            busboy.on('file', function(fieldName, file, filename, encoding, mimetype) {
+                if (fieldName == 'photo') {
+                    file.pipe(fs.createWriteStream(tempPath));
+                    console.log('\tsaved file ' + filename + ' to ' + tempPath);
+
+                    photoFilename = filename;
+                    photoPath = tempPath;
+                }
             });
-        });
 
-        busboy.on('field', function(fieldName, fieldValue) {
-            postForm.append(fieldName, fieldValue);
-            console.log('\tattached field ' + fieldName + '=' + fieldValue);
-        });
-
-        busboy.on('finish', function() {
-
-            // TODO: post station+mask signal to MIDI
-            console.log('\tsent submission signal over MIDI');
-
-            // TODO: post submission to emergence-server
-            postForm.submit({
-                host: 'lairs-of-self.sandbox01.jarv.us',
-                path: '/submissions?include=Password',
-                headers: {
-                    'Accept': 'application/json'
+            busboy.on('field', function(fieldName, fieldValue) {
+                if (fieldName == 'mask') {
+                    mask = fieldValue;
+                    console.log('\tattached field ' + fieldName + '=' + fieldValue);
                 }
-            }, function(postError, postResponse) {
-                if (postError) {
-                    console.log('\tfailed to post submission to emergence-server: ' + util.inspect(postError));
-                    return;
-                }
+            });
 
-                var body = '';
-                postResponse.on('data', function(chunk) {
-                    body += chunk;
-                });
+            busboy.on('finish', function() {
+                // TODO: post station+mask signal to MIDI
+                console.log('\tsent submission signal over MIDI');
 
-                postResponse.on('end', function() {
-                    var bodyParsed;
+                // upload submission to web server
+                console.log('\tbeginning upload to web server');
 
-                    console.log('\tposted submission to emergence-server and got status code ' + postResponse.statusCode);
+                fs.stat(photoPath, function(err, photoStats) {
 
-                    try {
-                        bodyParsed = JSON.parse(body);
-                    } catch(err) {
-                        console.log('\tfailed to parse emergence-server response:\n' + body);
-                        res.writeHead(500);
+                    restler.post('http://lairs-of-self.sandbox01.jarv.us/submissions?include=Password,validationErrors', {
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        multipart: true,
+                        data: {
+                            mask: mask,
+                            photo: restler.file(photoPath, photoFilename, photoStats.size, null, 'image/jpeg')
+                        }
+                    }).on('complete', function(webResponseData, webResponse) {
+                        console.log('\tfinished uploading submission to emergence-server, status=' + webResponse.statusCode);
+
+                        if (webResponse.statusCode != 200 || typeof webResponseData != 'object') {
+                            console.log('\tsubmission failed:\n' + util.inspect(webResponseData)+'\n\n');
+                            res.writeHead(500);
+                            res.end(JSON.stringify({
+                                success: false
+                            }));
+                            return;
+                        }
+
+                        console.log('\twebResponseData: ' + util.inspect(webResponseData));
+
+                        res.writeHead(200, {
+                            'Connection': 'close',
+                            'Content-Type': 'application/json'
+                        });
+
                         res.end(JSON.stringify({
-                            success: false
+                            success: webResponseData.success,
+                            password: webResponseData.data && webResponseData.data.Password && webResponseData.data.Password.Password
                         }));
-                        return;
-                    }
-
-                    res.writeHead(200, {
-                        'Connection': 'close',
-                        'Content-Type': 'application/json'
                     });
 
-                    res.end(JSON.stringify({
-                        success: bodyParsed.success,
-                        password: bodyParsed.data.Password.Password
-                    }));
                 });
             });
-        });
 
-        req.pipe(busboy);
+            // pipe request into busyboy
+            req.pipe(busboy);
+        });
 
     // Handle omit request
     } else if (req.url == '/omit' && req.method == 'POST') {
