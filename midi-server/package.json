@@ -1,0 +1,12 @@
+{
+	"name": "lairs-midi-server",
+	"description": "The midi-server component for the Lairs of Self installation.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JarvusInnovations/Lairs-Of-Self"
+	},
+	"version": "0.0.1",
+	"dependencies": {
+		"midi": ">= 0.5.0"
+	}
+}
