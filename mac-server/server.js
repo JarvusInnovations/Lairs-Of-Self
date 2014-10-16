@@ -49,6 +49,7 @@ var app = require('http').createServer(function (req, res) {
                 console.log('\tbeginning upload to web server');
 
                 fs.stat(photoPath, function(err, photoStats) {
+                    console.log('\tfile size: ' + photoStats.size);
 
                     restler.post('http://lairs-of-self.sandbox01.jarv.us/submissions?include=Password,validationErrors', {
                         headers: {
