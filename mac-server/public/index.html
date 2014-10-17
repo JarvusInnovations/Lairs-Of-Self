@@ -7,7 +7,7 @@
                 background: #000000;
             }
 
-            #photo, #mask, #overlay {
+            #photo, #mask, #overlay, #photoIncoming, #maskIncoming, #overlayIncoming {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -18,15 +18,30 @@
                 background-position: center center;
             }
 
-            #overlay {
-                background-image: url("overlay.png");
-            }
+			#overlay {
+				background-image: url('/overlay-1.png');
+			}
+
+			#photoIncoming, #maskIncoming, #overlayIncoming {
+				opacity: 0;
+			}
+			
+			#photoIncoming.reveal, #maskIncoming.reveal, #overlayIncoming.reveal {
+				opacity: 1;
+				-webkit-transition: opacity 10s ease-in-out;
+			  	-moz-transition: opacity 10s ease-in-out;
+			  	-o-transition: opacity 10s ease-in-out;
+			  	transition: opacity 10s ease-in-out;
+			}
         </style>
     </head>
     <body>
         <div id="photo"></div>
+		<div id="photoIncoming"></div>
         <div id="mask"></div>
+        <div id="maskIncoming"></div>
         <div id="overlay"></div>
+        <div id="overlayIncoming"></div>
 
         <script src="/socket.io/socket.io.js"></script>
         <script>
@@ -35,11 +50,39 @@
             var maskDom = document.getElementById('mask');
             var overlayDom = document.getElementById('overlay');
 
+			var photoIncoming = document.getElementById('photoIncoming');
+			var maskIncoming = document.getElementById('maskIncoming');
+			var overlayIncoming = document.getElementById('overlayIncoming');
+
+			function loadSubmission(submission) {
+				console.log('Submission', submission);
+
+				overlayIncoming.style.backgroundImage = 'url("/overlay-' + submission.kioskId + '.png")';
+				maskIncoming.style.backgroundImage = 'url("/masks/' + submission.mask + '.png")';
+     			photoIncoming.style.backgroundImage = 'url("/photos/' + submission.filenameRotated + '")';
+
+				overlayIncoming.className += ' reveal';
+				maskIncoming.className += ' reveal';
+				photoIncoming.className += ' reveal';
+
+				setTimeout(function() {
+					overlayDom.style.backgroundImage = 'url("/overlay-' + submission.kioskId + '.png")';
+					maskDom.style.backgroundImage = 'url("/masks/' + submission.mask + '.png")';
+	     			photoDom.style.backgroundImage = 'url("/photos/' + submission.filenameRotated + '")';
+					
+					overlayIncoming.className = ''; 
+					maskIncoming.className = '';
+					photoIncoming.className = '';
+					
+					overlayIncoming.style.backgroundImage = '';
+					maskIncoming.style.backgroundImage = '';
+	     			photoIncoming.style.backgroundImage = '';	
+				}, 10000);
+				
+			}
+
             socket.on('submission', function (submission) {
-                console.log('received submission', submission);
-                overlayDom.style.backgroundImage = 'url("/overlay-' + submission.kioskId + '.png")';
-                photoDom.style.backgroundImage = 'url("/photos/' + submission.filenameRotated + '")';
-                maskDom.style.backgroundImage = 'url("/masks/' + submission.mask + '.png")';
+				loadSubmission(submission);
             });
         </script>
     </body>
