@@ -44,7 +44,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     [request setHTTPShouldHandleCookies:NO];
-    [request setTimeoutInterval:10];
+    [request setTimeoutInterval:30];
     [request setHTTPMethod:@"POST"];
     
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];

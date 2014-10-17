@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UIButton *proceedButton;
+@property (strong) UIActivityIndicatorView *indicator;
 - (IBAction)proceedButtonClicked:(id)sender;
 
 @end

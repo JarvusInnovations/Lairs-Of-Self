@@ -62,6 +62,13 @@
     NSLog(@"Mask View Controller Did Load");
     [_carousel bringSubviewToFront:_proceedButton];
     _carousel.type = iCarouselTypeCoverFlow2;
+    
+    // Start loading view
+    _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _indicator.center = CGPointMake((self.view.frame.size.width / 2), self.view.frame.size.height - 210);
+    _indicator.hidesWhenStopped = YES;
+    [self.view addSubview:_indicator];
+    [_indicator startAnimating];
 }
 
 - (void)viewDidUnload
@@ -81,25 +88,23 @@
     NSInteger index = [_carousel currentItemIndex];
     NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"userImage"];
     UIImage* image = [UIImage imageWithData:imageData];
-    
+
     APIRequest *request = [[APIRequest alloc] init];
     BOOL apiResponse = [request makeAPIRequestWithMask:index andUserImage:image];
-    
+    [_carousel bringSubviewToFront:_indicator];
+
     NSLog(@"Selected image with index: %li",(long)index);
     NSLog(@"Selected image with index: %@",image);
 
-    //[self presentViewController:_sharingVC animated:YES completion:nil];
-    //[self presentModalViewController:myNewVC animated:YES];
-    
     if (apiResponse == YES) {
         NSLog(@"going to show word to remember");
+        // End loading view
+        [_indicator stopAnimating];
         [self performSegueWithIdentifier:@"showSharing" sender:self];
-
-//        [self dismissViewControllerAnimated:YES completion:^() {
-//        }];
-        
     } else {
         NSLog(@"going to enter installment screen");
+        // End loading view
+        [_indicator stopAnimating];
         [self performSegueWithIdentifier:@"skipWord" sender:self];
     }
 }
