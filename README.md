@@ -33,5 +33,5 @@ Online API for uploading submissions to from all mac servers.
 ### `touch-webapp`
 Mobile webapp for visitors to modify their submissions during the event
 
-### 'midi-server'
+### `midi-server`
 NodeJS daemon for listening for HTTP based post requests. Format is /midi/1 would post the midi value 1. Depending on the target machine hardware, the midi port may need to be changed midiOut.openPort(0)
