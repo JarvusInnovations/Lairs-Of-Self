@@ -33,9 +33,11 @@
             var socket = io('http://localhost:8080');
             var photoDom = document.getElementById('photo');
             var maskDom = document.getElementById('mask');
+            var overlayDom = document.getElementById('overlay');
 
             socket.on('submission', function (submission) {
                 console.log('received submission', submission);
+                overlayDom.style.backgroundImage = 'url("/overlay-' + submission.kioskId + '.png")';
                 photoDom.style.backgroundImage = 'url("/photos/' + submission.filenameRotated + '")';
                 maskDom.style.backgroundImage = 'url("/masks/' + submission.mask + '.png")';
             });
