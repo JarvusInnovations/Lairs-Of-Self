@@ -9,6 +9,8 @@
         "busboy": "*",
         "moment": "*",
         "restler": "*",
-        "tmp": "*"
+        "node-static": "*",
+        "socket.io": "*",
+        "gm": "*"
     }
 }

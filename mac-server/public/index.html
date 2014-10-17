@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lairs of Self TV</title>
+        <style>
+            body {
+                background: #000000;
+            }
+
+            #photo, #mask, #overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+            }
+
+            #overlay {
+                background-image: url("overlay.png");
+            }
+        </style>
+    </head>
+    <body>
+        <div id="photo"></div>
+        <div id="mask"></div>
+        <div id="overlay"></div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io('http://localhost:8080');
+            var photoDom = document.getElementById('photo');
+            var maskDom = document.getElementById('mask');
+
+            socket.on('submission', function (submission) {
+                console.log('received submission', submission);
+                photoDom.style.backgroundImage = 'url("/photos/' + submission.filenameRotated + '")';
+                maskDom.style.backgroundImage = 'url("/masks/' + submission.mask + '.png")';
+            });
+        </script>
+    </body>
+</html>

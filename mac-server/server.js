@@ -6,52 +6,61 @@ var util = require('util'),
     moment = require('moment'),
     tmp = require('tmp'),
     Busboy = require('busboy'),
-    restler = require('restler');
+    restler = require('restler'),
+    static = require('node-static'),
+    gm = require('gm');
+
+var submissions = [],
+    staticServer = new static.Server('./public');
 
 var app = require('http').createServer(function (req, res) {
-    console.log('\n' + moment().format('YYYY-MM-DD HH:mm:ss') + '\t' + req.method + ' ' + req.url);
+    var timestamp = moment().format('YYYY-MM-DD HH.mm.ss');
+
+    console.log('\n' + timestamp + '\t' + req.method + ' ' + req.url);
 
     // Handle submit request
     if (req.url == '/submit' && req.method == 'POST') {
         console.log('\treceiving photo submission');
 
-        // create temporary file to recieve photo into
-        tmp.tmpName(function(err, tempPath) {
-            console.log('\tobtained temporary file path: ' + tempPath);
+        // use busyboy to parse incoming form and populate formData
+        var busboy = new Busboy({ headers: req.headers }),
+            submission = {
+                filenameOrig: timestamp + '.orig.jpg',
+                filenameRotated: timestamp + '.rotated.jpg'
+            },
+            pathOrig = './public/photos/' + submission.filenameOrig,
+            pathRotated = './public/photos/' + submission.filenameRotated,
+            photoBytes;
 
-            // use busyboy to parse incoming form and populate formData
-            var busboy = new Busboy({ headers: req.headers }),
-                photoFilename, photoPath, mask;
+        // setup busyboy events
+        busboy.on('file', function(fieldName, file, filename, encoding, mimetype) {
+            if (fieldName == 'photo') {
+                file.pipe(fs.createWriteStream(pathOrig));
+                console.log('\tsaved file ' + filename + ' to ' + pathOrig);
+            }
+        });
 
-            // setup busyboy events
-            busboy.on('file', function(fieldName, file, filename, encoding, mimetype) {
-                if (fieldName == 'photo') {
-                    file.pipe(fs.createWriteStream(tempPath));
-                    console.log('\tsaved file ' + filename + ' to ' + tempPath);
+        busboy.on('field', function(fieldName, fieldValue) {
+            if (fieldName == 'mask') {
+                submission.mask = fieldValue;
+                console.log('\tattached field ' + fieldName + '=' + fieldValue);
+            }
+        });
 
-                    photoFilename = filename;
-                    photoPath = tempPath;
-                }
-            });
+        busboy.on('finish', function() {
 
-            busboy.on('field', function(fieldName, fieldValue) {
-                if (fieldName == 'mask') {
-                    mask = fieldValue;
-                    console.log('\tattached field ' + fieldName + '=' + fieldValue);
-                }
-            });
+            // TODO: post station+mask signal to MIDI
+            console.log('\tsent submission signal over MIDI');
 
-            busboy.on('finish', function() {
-                // TODO: post station+mask signal to MIDI
-                console.log('\tsent submission signal over MIDI');
+            // upload submission to web server
+            console.log('\tbeginning upload to web server');
 
-                // upload submission to web server
-                console.log('\tbeginning upload to web server');
+            setTimeout(function() { // i don't know what this timeout is needed for but without it the post seems to be incomplete occasionally -- probably because the .pipe() call above isn't finished
 
-                setTimeout(function() { // i don't know what this timeout is needed for but without it the post seems to be incomplete occasionally
-
-                    fs.stat(photoPath, function(err, photoStats) {
-                        console.log('\tfile size: ' + photoStats.size);
+                gm(pathOrig).autoOrient().write(pathRotated, function(err) {
+                    fs.stat(pathRotated, function(err, photoStats) {
+                        photoBytes = photoStats.size;
+                        console.log('\tfile size: ' + photoBytes);
 
                         restler.post('http://lairs-of-self.sandbox01.jarv.us/submissions?include=Password,validationErrors', {
                             headers: {
@@ -59,8 +68,8 @@ var app = require('http').createServer(function (req, res) {
                             },
                             multipart: true,
                             data: {
-                                mask: mask,
-                                photo: restler.file(photoPath, photoFilename, photoStats.size, null, 'image/jpeg')
+                                mask: submission.mask,
+                                photo: restler.file(pathRotated, submission.filenameRotated, photoBytes, null, 'image/jpeg')
                             }
                         }).on('complete', function(webResponseData, webResponse) {
                             console.log('\tfinished uploading submission to emergence-server, status=' + webResponse.statusCode);
@@ -85,18 +94,25 @@ var app = require('http').createServer(function (req, res) {
                                 success: webResponseData.success,
                                 password: webResponseData.data && webResponseData.data.Password && webResponseData.data.Password.Password
                             }));
+
+                            req.resume();
+
+                            // TODO: save to submissions array
+                            io.emit('submission', submission);
+
+                            submissions.unshift(submission);
                         }); // end of restler.complete handler
 
                     }); // end of fs.stat callback
 
-                }, 500); // end of timeout
+                }); // end of autoOrient
 
-            }); // end of busboy finish handler
+            }, 500); // end of timeout
 
-            // pipe request into busyboy
-            req.pipe(busboy);
+        }); // end of busboy finish handler
 
-        }); // end of tmpName callback
+        // pipe request into busyboy
+        req.pipe(busboy);
 
     // Handle omit request
     } else if (req.url == '/omit' && req.method == 'POST') {
@@ -112,10 +128,16 @@ var app = require('http').createServer(function (req, res) {
         // TODO: post omit signal to MIDI
         console.log('\tsent omission signal over MIDI');
 
+        req.resume();
+
     // Handle unrecognized request
     } else {
-        console.log('\trequest not recognized');
+        console.log('\trequest not recognized, passing to static server');
 
+        req.addListener('end', function() {
+            staticServer.serve(req, res);
+        }).resume();
+/*
         res.writeHead(404, {
             'Connection': 'close',
             'Content-Type': 'application/json'
@@ -125,6 +147,16 @@ var app = require('http').createServer(function (req, res) {
             success: false,
             message: 'request not recognized'
         }));
+*/
+    }
+});
+
+
+var io = require('socket.io')(app);
+
+io.on('connection', function (socket) {
+    if (submissions.length) {
+        socket.emit('submission', submissions[0]);
     }
 });
 
