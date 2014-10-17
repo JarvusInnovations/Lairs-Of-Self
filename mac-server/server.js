@@ -53,15 +53,14 @@ var app = require('http').createServer(function (req, res) {
 
         busboy.on('field', function(fieldName, fieldValue) {
             if (fieldName == 'mask') {
-                submission.mask = fieldValue;
+                submission.mask = parseInt(fieldValue);
                 console.log('\tattached field ' + fieldName + '=' + fieldValue);
             }
         });
 
         busboy.on('finish', function() {
 
-            // TODO: post station+mask signal to MIDI
-            console.log('\tsent submission signal over MIDI');
+            _postMidi((kioskId - 1) * 11 + submission.mask);
 
             // upload submission to web server
             console.log('\tbeginning upload to web server');
@@ -137,8 +136,7 @@ var app = require('http').createServer(function (req, res) {
             success: true
         }));
 
-        // TODO: post omit signal to MIDI
-        console.log('\tsent omission signal over MIDI');
+        _postMidi(kioskId * 11);
 
         req.resume();
 
@@ -174,3 +172,9 @@ io.on('connection', function (socket) {
 
 app.listen(8080);
 console.log('\nLairs of Self mac-server is now listening on port 8080, kioskId='+kioskId+'\n');
+
+
+function _postMidi(signal) {
+    restler.post('http://'+midiIp+'/midi/'+signal);
+    console.log('POSTed signal '+signal+' to MIDI server');
+}
