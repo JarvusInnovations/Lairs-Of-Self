@@ -10,7 +10,18 @@ var util = require('util'),
     gm = require('gm');
 
 var submissions = [],
-    staticServer = new static.Server('./public');
+    staticServer = new static.Server('./public'),
+    kioskId = process.argv[2],
+    midiIp = process.argv[3];
+
+// check command line args
+if (!kioskId) {
+    throw "kioskId required";
+}
+
+if (!midiIp) {
+    throw "midiIp required";
+}
 
 var app = require('http').createServer(function (req, res) {
     var timestamp = moment().format('YYYY-MM-DD HH.mm.ss');
@@ -25,7 +36,8 @@ var app = require('http').createServer(function (req, res) {
         var busboy = new Busboy({ headers: req.headers }),
             submission = {
                 filenameOrig: timestamp + '.orig.jpg',
-                filenameRotated: timestamp + '.rotated.jpg'
+                filenameRotated: timestamp + '.rotated.jpg',
+                kioskId: kioskId
             },
             pathOrig = './public/photos/' + submission.filenameOrig,
             pathRotated = './public/photos/' + submission.filenameRotated,
@@ -67,6 +79,7 @@ var app = require('http').createServer(function (req, res) {
                             },
                             multipart: true,
                             data: {
+                                kioskId: kioskId,
                                 mask: submission.mask,
                                 photo: restler.file(pathRotated, submission.filenameRotated, photoBytes, null, 'image/jpeg')
                             }
@@ -160,4 +173,4 @@ io.on('connection', function (socket) {
 });
 
 app.listen(8080);
-console.log('\nLairs of Self mac-server is now listening on port 8080\n');
+console.log('\nLairs of Self mac-server is now listening on port 8080, kioskId='+kioskId+'\n');
